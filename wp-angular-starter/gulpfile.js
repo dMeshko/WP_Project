@@ -221,9 +221,9 @@ gulp.task('watch', function () {
     gulp.watch('app/**/**.js', ['concat_js_app', 'cache-break']);
     gulp.watch('views/**/**.html', ['templates', 'cache-break']);
     gulp.watch('css/**/**.css', ['concat_css_app', 'cache-break']);
-    gulp.watch('admin/app/**/**.js', ['concat_js_app', 'cache-break']);
-    gulp.watch('admin/views/**/**.html', ['templates', 'cache-break']);
-    gulp.watch('admin/css/**/**.css', ['concat_css_app', 'cache-break']);
+    gulp.watch('admin/app/**/**.js', ['admin_concat_js_app', 'cache-break']);
+    gulp.watch('admin/views/**/**.html', ['admin_templates', 'cache-break']);
+    gulp.watch('admin/css/**/**.css', ['admin_concat_css_app', 'cache-break']);
 });
 
 gulp.task('serve', function () {
