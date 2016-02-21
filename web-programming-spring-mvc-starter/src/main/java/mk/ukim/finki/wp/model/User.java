@@ -4,8 +4,11 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Past;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -36,6 +39,21 @@ public class User extends BaseEntity {
 
     private String imageURL;
 
+    private Boolean isAdmin;
+
+    public User(){}
+
+    public User(String name, String surname, Date birthDate, String email, String username, String password, String imageURL, Boolean isAdmin){
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = birthDate;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.imageURL = imageURL;
+        this.isAdmin = isAdmin;
+    }
+
     //getters
     public String getName() {
         return name;
@@ -65,6 +83,11 @@ public class User extends BaseEntity {
         return imageURL;
     }
 
+    public Boolean getIsAdmin() {
+
+        return isAdmin;
+    }
+
     //setters
     public void setName(String name) {
         this.name = name;
@@ -92,5 +115,9 @@ public class User extends BaseEntity {
 
     public void setImageURL(String imageURL){
         this.imageURL = imageURL;
+    }
+
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 }

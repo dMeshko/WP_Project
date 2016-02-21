@@ -31,4 +31,8 @@
     <!-- serve static resources (*.html, ...) from src/main/webapp/ -->
     <mvc:default-servlet-handler/>
 
+    <!-- ALLOW MULTIPART FORM DATA BEING SUBMITTED -->
+    <bean id="multipartResolver"
+                class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
 </beans>

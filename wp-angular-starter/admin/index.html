@@ -13,8 +13,8 @@
   <title>WP Angular Starter</title>
 
   <!-- Concatenated CSS -->
-  <link href="/dest/lib.css?rev=371d2c944a34d6363dd24e41639c4d92" rel="stylesheet">
-  <link href="/dest/app.css?rev=3eb049bc7ba19180ff1544059fdcc413" rel="stylesheet">
+  <link href="../dest/lib.css?rev=371d2c944a34d6363dd24e41639c4d92" rel="stylesheet">
+  <link href="../dest/admin_app.css?rev=3eb049bc7ba19180ff1544059fdcc413" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -23,29 +23,15 @@
   <![endif]-->
 </head>
 
-<body ng-app="wp-angular-starter" ng-cloak class="ng-cloak">
-<h2>ASD</h3>
-<div id="chart"></div>
-</div>
+<body ng-app="admin-angular-starter" ng-cloak class="ng-cloak">
+<h2>Admin page</h3>
 
 
 <!-- Concatenated libraries -->
-<script src="/dest/lib.js?rev=f62cef5e8569dd82c43f7b921be36099"></script>
+<script src="../dest/lib.js?rev=f62cef5e8569dd82c43f7b921be36099"></script>
 <!-- Concatenated application -->
-<script src="/dest/src.js?rev=35af67e9374c12762b2dcc755515e1a8"></script>
+<script src="../dest/admin_src.js?rev=35af67e9374c12762b2dcc755515e1a8"></script>
 <!-- All html templates -->
-<script src="/dest/templates.js?rev=e63d3cdaa5a70b255e36b6de54f31b6c"></script>
-
-<script type="text/javascript">
-  var chart = c3.generate({
-    bindto: '#chart',
-    data: {
-      columns: [
-        ['data1', 30, 200, 100, 400, 150, 250],
-        ['data2', 50, 20, 10, 40, 15, 25]
-      ]
-    }
-});
-</script>
+<script src="../dest/admin_templates.js?rev=2e2000313aecd86f2eb18ad0c247584c"></script>
 </body>
 </html>

@@ -266,6 +266,13 @@
             <version>${commons-fileupload.version}</version>
         </dependency>
 
+        <!-- Apache Commons Upload -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <!--<version>${commons-io.verion}</version>-->
+        </dependency>
+
         <!-- Dandelion -->
         <dependency>
             <groupId>com.github.dandelion</groupId>

@@ -36,6 +36,10 @@ var CSS_APP = [
     'css/main.css'
 ];
 
+var ADMIN_CSS_APP = [
+    'admin/css/main.css'
+];
+
 var JS_LIB = [
     'bower_components/jquery/dist/jquery.min.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
@@ -77,6 +81,10 @@ var JS_APP = [
 ];
 
 
+var ADMIN_JS_APP = [
+    'admin/app/**/*.js'
+];
+
 /**
 *   The location of the resources for deploy
 */
@@ -86,10 +94,12 @@ var DESTINATION = 'dest/';
 * by this script.
 */
 var INDEX_FILE = 'index.html';
+var ADMIN_INDEX_FILE = "admin/index.html";
 /**
 * The name of the angular module
 */
 var  MODULE_NAME = 'wp-angular-starter';
+var  ADMIN_MODULE_NAME = 'admin-angular-starter';
 /**
 * The URL of the back-end API
 */
@@ -108,6 +118,7 @@ gulp.task('concat_js_lib', function () {
         .pipe(concat('lib.js')) // concatenate them in lib.js
         .pipe(gulp.dest(DESTINATION)) // save lib.js in the DESTINATION folder
 });
+
 
 /**
 * Task for concatenation of the css libraries used 
@@ -129,6 +140,12 @@ gulp.task('concat_js_app', function () {
         .pipe(gulp.dest(DESTINATION))
 });
 
+gulp.task('admin_concat_js_app', function (){
+    return gulp.src(ADMIN_JS_APP)
+        .pipe(concat('admin_src.js'))
+        .pipe(gulp.dest(DESTINATION))
+});
+
 /**
 * Task for concatenation of the css code defined 
 * in this project 
@@ -136,6 +153,12 @@ gulp.task('concat_js_app', function () {
 gulp.task('concat_css_app', function () {
     return gulp.src(CSS_APP)
         .pipe(concat('app.css'))
+        .pipe(gulp.dest(DESTINATION))
+});
+
+gulp.task('admin_concat_css_app', function () {
+    return gulp.src(ADMIN_CSS_APP)
+        .pipe(concat('admin_app.css'))
         .pipe(gulp.dest(DESTINATION))
 });
 
@@ -149,7 +172,17 @@ gulp.task('templates', function () {
             templateCache('templates.js', { // compile them as angular templates 
                 module: MODULE_NAME,        // from module MODULE_NAME 
                 root: 'app'                 // of the app
-            })) 
+            }))
+        .pipe(gulp.dest(DESTINATION));
+});
+
+gulp.task('admin_templates', function () {
+    return gulp.src('admin/views/**/**.html') // which html files
+        .pipe(
+        templateCache('admin_templates.js', { // compile them as angular templates
+            module: ADMIN_MODULE_NAME,        // from module MODULE_NAME
+            root: 'admin/app'                 // of the app
+        }))
         .pipe(gulp.dest(DESTINATION));
 });
 
@@ -163,12 +196,21 @@ gulp.task('cache-break', function () {
         .pipe(gulp.dest('.'));  // save the modified file at the same destination
 });
 
+gulp.task('admin_cache-break', function () {
+    return gulp.src(ADMIN_INDEX_FILE) // use the INDEX_FILE as source
+        .pipe(rev())            // append the revision to all resources
+        .pipe(gulp.dest('.'));  // save the modified file at the same destination
+});
+
 var tasks = [
     'concat_js_lib',
     'concat_css_lib',
     'concat_js_app',
     'concat_css_app',
-    'templates'
+    'templates',
+    'admin_concat_js_app',
+    'admin_concat_css_app',
+    'admin_templates'
 ];
 
 gulp.task('build', tasks, function () {
@@ -179,6 +221,9 @@ gulp.task('watch', function () {
     gulp.watch('app/**/**.js', ['concat_js_app', 'cache-break']);
     gulp.watch('views/**/**.html', ['templates', 'cache-break']);
     gulp.watch('css/**/**.css', ['concat_css_app', 'cache-break']);
+    gulp.watch('admin/app/**/**.js', ['concat_js_app', 'cache-break']);
+    gulp.watch('admin/views/**/**.html', ['templates', 'cache-break']);
+    gulp.watch('admin/css/**/**.css', ['concat_css_app', 'cache-break']);
 });
 
 gulp.task('serve', function () {
