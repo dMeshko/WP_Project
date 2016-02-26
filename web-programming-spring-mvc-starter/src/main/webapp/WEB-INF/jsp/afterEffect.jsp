@@ -16,6 +16,8 @@
 %>
 <%= wtf + " - " %>
 
-${name} - VS - ${fileName}
+${file1}
+${file2}
+<h1>${p}</h1>
 </body>
 </html>

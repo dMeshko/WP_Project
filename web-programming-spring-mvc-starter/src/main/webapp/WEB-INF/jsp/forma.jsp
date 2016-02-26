@@ -15,12 +15,11 @@
 <!--String name, String surname, Date birthDate, String email, String username, String password, String imageURL, Boolean isAdmin-->
   <form action="./" method = "POST" enctype="multipart/form-data">
     <input name = "name" value = "" placeholder="name" /><br />
-    <input name = "surname" value = "" placeholder="name" /><br />
-    <input name = "birthDate" value = "" placeholder="name" /><br />
-    <input name = "email" value = "" placeholder="name" /><br />
-    <input name = "username" value = "" placeholder="name" /><br />
-    <input name = "password" value = "" placeholder="name" /><br />
-    <input name = "imageURL" value = "" placeholder="name" /><br />
+    <input name = "surname" value = "" placeholder="surname" /><br />
+    <input type = "date" name = "birthDate" value = "" placeholder="birthDate" /><br />
+    <input type="email" name = "email" value = "" placeholder="email" /><br />
+    <input name = "username" value = "" placeholder="username" /><br />
+    <input name = "password" value = "" placeholder="password" /><br />
     <input type = "file" name = "file" />
     <input type="submit">
   </form>

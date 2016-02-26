@@ -3,10 +3,7 @@ package mk.ukim.finki.wp.model;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Past;
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,13 +21,15 @@ public class User extends BaseEntity {
     @Length(max = 25)
     private String surname;
 
-    @Past
-    private Date birthDate;
+    @Length(max = 10)
+    //format: dd/MM/yyyy
+    private String birthDate;
 
     @Email
     @Length(max = 50)
     private String email;
 
+    @Column(name = "username", unique = true)
     @Length(max = 50)
     private String username;
 
@@ -43,7 +42,7 @@ public class User extends BaseEntity {
 
     public User(){}
 
-    public User(String name, String surname, Date birthDate, String email, String username, String password, String imageURL, Boolean isAdmin){
+    public User(String name, String surname, String birthDate, String email, String username, String password, String imageURL, Boolean isAdmin){
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
@@ -63,7 +62,7 @@ public class User extends BaseEntity {
         return surname;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
@@ -97,7 +96,7 @@ public class User extends BaseEntity {
         this.surname = surname;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 

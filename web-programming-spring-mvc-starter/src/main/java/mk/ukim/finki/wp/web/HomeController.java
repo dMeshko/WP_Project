@@ -16,10 +16,17 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Darko on 2/19/2016.
@@ -35,33 +42,28 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index(){
-        ModelAndView modelAndView = new ModelAndView("listing");
+        ModelAndView modelAndView = new ModelAndView("forma");
 
         return modelAndView;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ModelAndView afterSubmit(@RequestParam String name, @RequestParam String surname, @RequestParam String birthDate, @RequestParam String email, @RequestParam String username, @RequestParam String password, @RequestParam String imageURL, @RequestParam(value = "file") MultipartFile file){
+    public ModelAndView afterSubmit(@RequestParam String name, @RequestParam String surname, @RequestParam String birthDate, @RequestParam String email, @RequestParam String username, @RequestParam String password, @RequestParam(value = "file") MultipartFile file){
         ModelAndView modelAndView = new ModelAndView("afterEffect");
-        userService.signUp(name, surname, new Date("2014/23/01"), email, username, password, imageURL, false);
+        birthDate = "13/08/1994";
+        userService.signUp(name, surname, birthDate, email, username, password, false, file);
 
-        String fileName = file.getOriginalFilename();
-        modelAndView.addObject("name", name);
-        modelAndView.addObject("fileName", file.getOriginalFilename());
-        /*if (!file.isEmpty()) {
-            try {
-                byte[] bytes = file.getBytes();
-                BufferedOutputStream stream =
-                        new BufferedOutputStream(new FileOutputStream(new File(name)));
-                stream.write(bytes);
-                stream.close();
-                //return "You successfully uploaded " + name + "!";
-            } catch (Exception e) {
-                //return "You failed to upload " + name + " => " + e.getMessage();
-            }
-        } else {
-            //return "You failed to upload " + name + " because the file was empty.";
-        }*/
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = null;
+        try {
+            date = simpleDateFormat.parse(birthDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if (date == null)
+            date = new Date();
+        modelAndView.addObject("sent", birthDate);
+        modelAndView.addObject("converted", date.toString());
 
         return modelAndView;
     }
@@ -74,9 +76,14 @@ public class HomeController {
     }
 
     @RequestMapping(value="/listing",method = RequestMethod.POST)
-    public ModelAndView createListing(@RequestParam String title, @RequestParam String content){
-        ModelAndView mav = new ModelAndView("listing");
-        listingService.createListing(title, content, new Date(), null);
+    public ModelAndView createListing(@RequestParam String title, @RequestParam String content, @RequestParam ArrayList<MultipartFile> file, HttpSession session){
+        ModelAndView mav = new ModelAndView("afterEffect");
+        //Long userId = Long.parseLong(String.valueOf(session.getAttribute("userId")));
+        //comment the line bellow in production
+        Long userId = (long)3;
+        listingService.createListing(title, content, new Date(), file, userService.getUser(userId));
+        mav.addObject("file1", file.get(0).getOriginalFilename());
+        mav.addObject("file2", file.get(1).getOriginalFilename());
         return mav;
     }
 }

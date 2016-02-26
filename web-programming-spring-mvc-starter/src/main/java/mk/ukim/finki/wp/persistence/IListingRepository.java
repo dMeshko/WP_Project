@@ -14,4 +14,5 @@ public interface IListingRepository {
     public void saveOrUpdate(Listing listing);
     public void delete(Long id);
     public User findUser(Long userId);
+    public List<Listing> getAllListingsByUser(Long userId);
 }

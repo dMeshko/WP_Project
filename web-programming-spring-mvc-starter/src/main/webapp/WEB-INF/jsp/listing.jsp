@@ -11,11 +11,12 @@
     <title></title>
 </head>
 <body>
-  <form method="POST" action="./listing">
+  <form method="POST" action="./listing" enctype="multipart/form-data">
     <input name="title" placeholder="Here goes title of listing">
     <br>
     <textarea name="content" placeholder="Here write the content of the listing"></textarea>
     <br>
+    <input multiple type = "file" name = "file" />
     <button type="submit">Create</button>
   </form>
 </body>

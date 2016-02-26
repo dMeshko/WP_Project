@@ -5,9 +5,14 @@ import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.persistence.BaseRepository;
 import mk.ukim.finki.wp.persistence.IListingRepository;
 import mk.ukim.finki.wp.persistence.IUserRepository;
+import mk.ukim.finki.wp.persistence.helper.PredicateBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
@@ -42,5 +47,15 @@ public class ListingRepository implements IListingRepository {
     @Override
     public User findUser(Long userId) {
        return baseRepository.getById(User.class, userId);
+    }
+
+    public List<Listing> getAllListingsByUser(final Long userId)
+    {
+        return baseRepository.find(Listing.class, new PredicateBuilder<Listing>() {
+            @Override
+            public Predicate toPredicate(CriteriaBuilder cb, CriteriaQuery<Listing> cq, Root<Listing> root) {
+                return cb.equal(root.get("user"), userId);
+            }
+        });
     }
 }

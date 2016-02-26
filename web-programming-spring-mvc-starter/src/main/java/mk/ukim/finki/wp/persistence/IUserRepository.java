@@ -14,4 +14,5 @@ public interface IUserRepository {
     public User findById(Long id);
     public List<User> findAll();
     public void delete(Long id);
+    public List<User> getAllAdmins();
 }

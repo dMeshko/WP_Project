@@ -61,4 +61,14 @@ public class UserRepository implements IUserRepository {
     public void delete(Long id) {
         baseRepository.delete(User.class, id);
     }
+
+    public List<User> getAllAdmins()
+    {
+        return baseRepository.find(User.class, new PredicateBuilder<User>() {
+            @Override
+            public Predicate toPredicate(CriteriaBuilder cb, CriteriaQuery<User> cq, Root<User> root) {
+                return cb.equal(root.get("isAdmin"), true);
+            }
+        });
+    }
 }
