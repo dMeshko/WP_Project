@@ -29,7 +29,7 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
         }
       }
     }).state("app.users", {
-      url: "/users",
+      url: "users",
       views: {
         "content@": {
           templateUrl: "/admin/views/user/users.html",
@@ -37,7 +37,7 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
         }
       }
     }).state("app.userDetails", {
-      url: "/users/:id",
+      url: "users/:id",
       views: {
         "content@": {
           templateUrl: "/admin/views/user/userDetails.html",
@@ -45,7 +45,7 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
         }
       }
     }).state("app.listings", {
-      url: "/listings",
+      url: "listings",
       views: {
         "content@": {
           templateUrl: "/admin/views/listing/listings.html",
@@ -53,7 +53,7 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
         }
       }
     }).state("app.messages", {
-      url: "/messages",
+      url: "messages",
       views: {
         "content@": {
           templateUrl: "/admin/views/listing/listings.html",

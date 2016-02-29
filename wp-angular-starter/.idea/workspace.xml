@@ -49,8 +49,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2622108" vertical-offset="561" max-vertical-offset="1190">
-              <caret line="39" column="24" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.344473" vertical-offset="240" max-vertical-offset="1190">
+              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -145,7 +145,6 @@
         <option value="$PROJECT_DIR$/admin/views/title.html" />
         <option value="$PROJECT_DIR$/admin/css/main.css" />
         <option value="$PROJECT_DIR$/admin/index.html" />
-        <option value="$PROJECT_DIR$/admin/app/app.js" />
         <option value="$PROJECT_DIR$/admin/app/services/UserService.js" />
         <option value="$PROJECT_DIR$/admin/views/user/userDetails.html" />
         <option value="$PROJECT_DIR$/admin/app/controllers/UserDetailsController.js" />
@@ -154,6 +153,7 @@
         <option value="$PROJECT_DIR$/admin/views/header.html" />
         <option value="$PROJECT_DIR$/admin/views/user/users.html" />
         <option value="$PROJECT_DIR$/admin/app/controllers/UserController.js" />
+        <option value="$PROJECT_DIR$/admin/app/app.js" />
       </list>
     </option>
   </component>
@@ -732,12 +732,12 @@
       <workItem from="1456335519495" duration="247000" />
       <workItem from="1456503643772" duration="2626000" />
       <workItem from="1456513242409" duration="2866000" />
-      <workItem from="1456628169388" duration="9882000" />
+      <workItem from="1456628169388" duration="10378000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22498000" />
+    <option name="totallyTimeSpent" value="22994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
@@ -1203,8 +1203,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2622108" vertical-offset="561" max-vertical-offset="1190">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.344473" vertical-offset="240" max-vertical-offset="1190">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
           <folding />
         </state>
       </provider>

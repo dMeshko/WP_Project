@@ -95,7 +95,7 @@ public class HomeController {
         ModelAndView mav = new ModelAndView("afterEffect");
         //Long userId = Long.parseLong(String.valueOf(session.getAttribute("userId")));
         //comment the line bellow in production
-        Long userId = (long)3;
+        Long userId = (long)10;
         listingService.createListing(title, content, new Date(), file, userService.getUser(userId));
         mav.addObject("file1", file.get(0).getOriginalFilename());
         mav.addObject("file2", file.get(1).getOriginalFilename());
