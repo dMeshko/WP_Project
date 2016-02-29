@@ -13,6 +13,8 @@
 <body>
 <h2>Hello?</h2>
 <!--String name, String surname, Date birthDate, String email, String username, String password, String imageURL, Boolean isAdmin-->
+  imageUrl: ${imageURL}
+  <h2>${usr}</h2>
   <form action="./" method = "POST" enctype="multipart/form-data">
     <input name = "name" value = "" placeholder="name" /><br />
     <input name = "surname" value = "" placeholder="surname" /><br />

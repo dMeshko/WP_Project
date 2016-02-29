@@ -38,11 +38,21 @@ public class User extends BaseEntity {
 
     private String imageURL;
 
+    public String getUploadPath() {
+        return uploadPath;
+    }
+
+    public void setUploadPath(String uploadPath) {
+        this.uploadPath = uploadPath;
+    }
+
+    private String uploadPath;
+
     private Boolean isAdmin;
 
     public User(){}
 
-    public User(String name, String surname, String birthDate, String email, String username, String password, String imageURL, Boolean isAdmin){
+    public User(String name, String surname, String birthDate, String email, String username, String password, String imageURL, Boolean isAdmin, String uploadPath){
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
@@ -51,6 +61,7 @@ public class User extends BaseEntity {
         this.password = password;
         this.imageURL = imageURL;
         this.isAdmin = isAdmin;
+        this.uploadPath = uploadPath;
     }
 
     //getters

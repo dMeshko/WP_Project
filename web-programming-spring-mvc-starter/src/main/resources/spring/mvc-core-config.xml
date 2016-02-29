@@ -20,10 +20,9 @@
     <!-- - POJOs labeled with the @Controller and @Service annotations are auto-detected. -->
     <context:component-scan base-package="mk.ukim.finki.wp.web"/>
 
-
     <!-- all resources inside folder src/main/webapp/resources are mapped so
         they can be refered to inside JSP files (see header.jsp for more details) -->
-    <mvc:resources mapping="/resources/**" location="/app/"/>
+    <mvc:resources mapping="/resources/**" location="/app/, /resources/data/"/>
 
     <!-- the default path -->
     <mvc:view-controller path="/" view-name="index"/>

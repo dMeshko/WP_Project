@@ -38,4 +38,10 @@ public class UserResource {
     {
         return userService.getUser(id);
     }
+
+    @RequestMapping(value = "/remove/{id}", method = RequestMethod.DELETE)
+    public void removeUser(@PathVariable Long id)
+    {
+        userService.remove(id);
+    }
 }

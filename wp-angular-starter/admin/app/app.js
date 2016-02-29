@@ -9,14 +9,15 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
   'ui.select',
   'ngQuickDate']);
 
-  WPAngularStarter.constant("serverURL", "http://localhost:8080/servlet-showcase/");
+  WPAngularStarter.constant("serverURL", "http://localhost:8080/servlet-showcase");
+  WPAngularStarter.constant("apiURL", "http://localhost:8080/servlet-showcase/api");
 
   WPAngularStarter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider){
     //for undefined state, redirect to home
     $urlRouterProvider.otherwise("/");
 
     //here we defined the state
-    $stateProvider.state("home", {
+    $stateProvider.state("app", {
       url: "/",
       views: {
         "header": {
@@ -25,12 +26,9 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
         "content": {
           templateUrl: "/admin/views/title.html",
           controller: "HomeController"
-        },
-        "footer": {
-          templateUrl: "/admin/views/footer.html"
         }
       }
-    }).state("users", {
+    }).state("app.users", {
       url: "/users",
       views: {
         "content@": {
@@ -38,8 +36,24 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
           controller: "UserController"
         }
       }
-    }).state("listings", {
+    }).state("app.userDetails", {
+      url: "/users/:id",
+      views: {
+        "content@": {
+          templateUrl: "/admin/views/user/userDetails.html",
+          controller: "UserDetailsController"
+        }
+      }
+    }).state("app.listings", {
       url: "/listings",
+      views: {
+        "content@": {
+          templateUrl: "/admin/views/listing/listings.html",
+          controller: "ListingController"
+        }
+      }
+    }).state("app.messages", {
+      url: "/messages",
       views: {
         "content@": {
           templateUrl: "/admin/views/listing/listings.html",

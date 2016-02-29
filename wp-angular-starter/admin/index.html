@@ -25,12 +25,8 @@
 
 <body ng-app="admin-angular-starter" ng-cloak class="ng-cloak">
 
-  <h2>Admin page</h2>
-    <a ui-sref="users">users</a>
-    <a ui-sref="listings">listings</a>
-
+  <div ui-view = "header"></div>
   <div ui-view = "content"></div>
-
 
 <!-- Concatenated libraries -->
 <script src="../dest/lib.js?rev=f62cef5e8569dd82c43f7b921be36099"></script>

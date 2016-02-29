@@ -1,3 +1,8 @@
-body{
-    background: chartreuse;
+header{
+    margin-bottom: 50px;
+}
+
+.left-side{
+    position: fixed;
+
 }

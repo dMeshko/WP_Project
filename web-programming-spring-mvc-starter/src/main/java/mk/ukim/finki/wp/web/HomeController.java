@@ -7,6 +7,9 @@ import mk.ukim.finki.wp.service.IListingService;
 import mk.ukim.finki.wp.service.imlp.ListingService;
 import mk.ukim.finki.wp.service.imlp.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ResourceLoaderAware;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +19,15 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
@@ -40,9 +48,16 @@ public class HomeController {
     @Autowired
     ListingService listingService;
 
+    private ResourceLoader resourceLoader;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView index(){
+    public ModelAndView index(HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView("forma");
+
+        //User user = userService.getUser((long) 6);
+        //String url = request.getHeader("Host") + request.getContextPath();
+        //modelAndView.addObject("imageURL", url);
+        //modelAndView.addObject("usr", getClass().getResource("classpath:resources") + user.getUsername());
 
         return modelAndView;
     }

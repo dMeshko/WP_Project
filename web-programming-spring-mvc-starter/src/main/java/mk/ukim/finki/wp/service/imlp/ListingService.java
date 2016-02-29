@@ -34,18 +34,19 @@ public class ListingService implements IListingService{
             if (!image.isEmpty()) {
                 try {
                     File file = new File(image.getOriginalFilename());
-                    Path p = Paths.get(file.getAbsoluteFile().getParent() + "/src/main/resources");
+                    Path p = Paths.get(file.getAbsoluteFile().getParent() + "/src/main/webapp");
                     byte[] bytes = image.getBytes();
                     BufferedOutputStream stream =
                             new BufferedOutputStream(new FileOutputStream(file));
                     stream.write(bytes);
                     stream.close();
-                    p = Paths.get(p.toAbsolutePath() + "/data/users/" + user.getUsername() + "/listings/" + title);
+                    p = Paths.get(p.toAbsolutePath() + "/resources/data/users/" + user.getUsername() + "/listings/" + title);
                     File f1 = new File(p.toAbsolutePath().toString());
                     f1.mkdirs();
                     p = Paths.get(p.toAbsolutePath() + "/" + image.getOriginalFilename());
                     uploadPath = p.toAbsolutePath().toString();
                     file.renameTo(new File(uploadPath));
+                    uploadPath = "/resources/users/" + user.getUsername() + "/listings/" + title+ "/" + image.getOriginalFilename();
                 } catch (Exception e) {
                     e.getStackTrace();
                 }
@@ -59,8 +60,21 @@ public class ListingService implements IListingService{
         listingRepository.saveOrUpdate(listing);
     }
 
+    private void deleteRecursively(String path){
+        File file = new File(path);
+        if (file != null) {
+            for (File f : file.listFiles())
+                if (f.isDirectory())
+                    deleteRecursively(f.getAbsolutePath());
+                else f.delete();
+            file.delete();
+        }
+    }
+
     @Override
     public void delete(Long id) {
+        Listing listing = getById(id);
+        deleteRecursively(listing.getUser().getUploadPath() + "/listings/" + listing.getTitle());
         listingRepository.delete(id);
     }
 
