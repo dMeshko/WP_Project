@@ -4,10 +4,7 @@ import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,5 +40,17 @@ public class UserResource {
     public void removeUser(@PathVariable Long id)
     {
         userService.remove(id);
+    }
+
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    public void updateUser(@PathVariable Long id, @RequestParam String name, @RequestParam String surname, @RequestParam String email, @RequestParam String username, @RequestParam String password, @RequestParam String birthDate){
+        User user = userService.getUser(id);
+        user.setName(name);
+        user.setSurname(surname);
+        user.setEmail(email);
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setBirthDate(birthDate);
+        userService.update(user);
     }
 }

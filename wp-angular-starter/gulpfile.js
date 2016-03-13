@@ -73,7 +73,8 @@ var JS_LIB = [
     'bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.min.js',
     'bower_components/angular-xeditable/dist/js/xeditable.js',
     'bower_components/d3/d3.min.js',
-    'bower_components/c3/c3.min.js'
+    'bower_components/c3/c3.min.js',
+    'bower_components/angularUtils-pagination/dirPagination.js'
 ];
 
 var JS_APP = [

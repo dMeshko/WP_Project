@@ -7,5 +7,6 @@ var WPAngularStarter = angular.module('wp-angular-starter', [
   'toastr',
   'angular-loading-bar',
   'ui.select',
-  'ngQuickDate']);
+  'ngQuickDate',
+  'angularUtils.directives.dirPagination']);
 

@@ -7,10 +7,31 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
   'toastr',
   'angular-loading-bar',
   'ui.select',
-  'ngQuickDate']);
+  'ngQuickDate',
+  'angularUtils.directives.dirPagination']);
 
   WPAngularStarter.constant("serverURL", "http://localhost:8080/servlet-showcase");
   WPAngularStarter.constant("apiURL", "http://localhost:8080/servlet-showcase/api");
+
+  WPAngularStarter.directive('fileModel', ['$parse', function ($parse) {
+    return {
+      restrict: 'A',
+      link: function(scope, element, attrs) {
+        var model = $parse(attrs.fileModel);
+        var modelSetter = model.assign;
+
+        element.bind('change', function(){
+          scope.$apply(function(){
+            modelSetter(scope, element[0].files[0]);
+          });
+        });
+      }
+    };
+  }]);
+
+  WPAngularStarter.config(function (paginationTemplateProvider){
+    paginationTemplateProvider.setPath('../../bower_components/angularUtils-pagination/dirPagination.tpl.html');
+  });
 
   WPAngularStarter.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider){
     //for undefined state, redirect to home
@@ -42,6 +63,18 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
         "content@": {
           templateUrl: "/admin/views/user/userDetails.html",
           controller: "UserDetailsController"
+        },
+        "userDetails@app.userDetails": {
+          templateUrl: "/admin/views/user/viewUserDetails.html",
+          controller: "ViewUserDetailsController"
+        }
+      }
+    }).state("app.userDetails.edit", {
+      url: "/edit",
+      views: {
+        "userDetails@app.userDetails": {
+          templateUrl: "/admin/views/user/editUserDetails.html",
+          controller: "EditUserDetailsController"
         }
       }
     }).state("app.listings", {

@@ -20,7 +20,7 @@ public class Listing extends BaseEntity {
     @Length(max = 5000)
     private String content;
 
-    private Date createdOn;
+    private String createdOn;
 
     @Column(name = "image_url")
     @ElementCollection(fetch = FetchType.EAGER)
@@ -35,7 +35,7 @@ public class Listing extends BaseEntity {
 
     }
 
-    public Listing(String title, String content, Date createdOn, ArrayList<String> imageURLs, User user){
+    public Listing(String title, String content, String createdOn, ArrayList<String> imageURLs, User user){
         this.title = title;
         this.content = content;
         this.createdOn = createdOn;

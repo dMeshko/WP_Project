@@ -52,7 +52,7 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request){
-        ModelAndView modelAndView = new ModelAndView("forma");
+        ModelAndView modelAndView = new ModelAndView("listing");
 
         //User user = userService.getUser((long) 6);
         //String url = request.getHeader("Host") + request.getContextPath();
