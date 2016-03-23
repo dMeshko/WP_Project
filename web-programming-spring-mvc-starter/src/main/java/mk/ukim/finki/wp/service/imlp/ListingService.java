@@ -1,6 +1,7 @@
 package mk.ukim.finki.wp.service.imlp;
 
 import mk.ukim.finki.wp.model.Listing;
+import mk.ukim.finki.wp.model.Report;
 import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.persistence.IListingRepository;
 import mk.ukim.finki.wp.service.IListingService;
@@ -13,6 +14,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +28,7 @@ public class ListingService implements IListingService{
     IListingRepository listingRepository;
 
     @Override
-    public void createListing(String title, String content, Date createdOn, ArrayList<MultipartFile> images, User user) {
+    public void createListing(String title, String content, Date createdOn, ArrayList<MultipartFile> images, User user, Long lng, Long lat) {
         ArrayList<String> imageURLs = new ArrayList<String>();
         for (MultipartFile image : images)
         {
@@ -56,7 +58,8 @@ public class ListingService implements IListingService{
             }
             imageURLs.add(uploadPath);
         }
-        Listing listing = new Listing(title, content, createdOn, imageURLs, user);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Listing listing = new Listing(title, content, simpleDateFormat.format(createdOn), imageURLs, user, lng, lat);
         listingRepository.saveOrUpdate(listing);
     }
 
@@ -91,6 +94,75 @@ public class ListingService implements IListingService{
     @Override
     public User getUser(Long userId) {
         return listingRepository.findUser(userId);
+    }
+
+    @Override
+    public List<Listing> search(String keyword) {
+        return listingRepository.search(keyword);
+    }
+
+    private String fixFilterDateFormat(Integer day, Integer month, Integer year){
+        StringBuilder stringBuilder = new StringBuilder();
+        if (day == null)
+            stringBuilder.append("__/");
+        else if (day < 10)
+            stringBuilder.append("0" + day + "/");
+        else if (day >= 10 && day <= 31)
+            stringBuilder.append(day + "/");
+        else //null or invalid date
+            stringBuilder.append("__/");
+
+        if (month == null)
+            stringBuilder.append("__/");
+        else if (month < 10)
+            stringBuilder.append("0" + month + "/");
+        else if (month >= 10 && month <= 12)
+            stringBuilder.append(month + "/");
+        else //null or invalid date
+            stringBuilder.append("__/");
+
+        if (year != null)
+            stringBuilder.append(year);
+        else //null or invalid date
+            stringBuilder.append("____");
+
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public List<Listing> filterByDate(Integer day, Integer month, Integer year) {
+        return listingRepository.filterByDate(fixFilterDateFormat(day, month, year));
+    }
+
+    @Override
+    public List<Report> getAllReports() {
+        return listingRepository.getAllReports();
+    }
+
+    @Override
+    public List<Report> getAllUnreadReports() {
+        return listingRepository.getAllUnreadReports();
+    }
+
+    @Override
+    public void saveReport(String content, User userFrom, Listing listing) {
+        java.text.SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String submittedOn = simpleDateFormat.format(new Date()).toString();
+
+        Report report = new Report(content, submittedOn, userFrom, listing);
+        listingRepository.saveOrUpdateReport(report);
+    }
+
+    @Override
+    public void updateReport(Long id, Boolean seen) {
+        Report report = listingRepository.getReportById(id);
+        report.setSeen(seen);
+        listingRepository.saveOrUpdateReport(report);
+    }
+
+    @Override
+    public Report getReportById(Long id) {
+        return listingRepository.getReportById(id);
     }
 
     public List<Listing> getAllListingsByUser(Long userId)

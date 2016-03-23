@@ -25,6 +25,6 @@
     "ngQuickDate": "~1.3.3"
   },
   "resolutions": {
-    "angular": "~1.4.0"
+    "angular": "1.5.1"
   }
 }

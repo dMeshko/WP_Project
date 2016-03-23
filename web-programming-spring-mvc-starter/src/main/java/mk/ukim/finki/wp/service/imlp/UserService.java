@@ -58,8 +58,21 @@ public class UserService implements IUserService{
             uploadPath = ""; //set default user image here
         }
 
-
         User user = new User(name, surname, birthDate, email, username, password, imageURL, isAdmin, uploadPath1);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void signUp(String name, String surname, String birthDate, String email, String username, String password) {
+        User admin = userRepository.findById((long) 1);
+        String[] chunks = admin.getUploadPath().split("/");
+        String uploadPath = Paths.get(admin.getUploadPath()).getParent().toString();
+        Path p = Paths.get(uploadPath + "/" + username);
+        uploadPath = p.toAbsolutePath().toString();
+        File f1 = new File(p.toAbsolutePath().toString());
+        f1.mkdirs();
+        String defaultImageURL = "/resources/users/default.jpg";
+        User user = new User(name, surname, birthDate, email, username, password, defaultImageURL, false, uploadPath);
         userRepository.save(user);
     }
 

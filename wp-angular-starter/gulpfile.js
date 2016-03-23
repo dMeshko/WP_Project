@@ -1,13 +1,13 @@
 /**
-*
-* Developed as a part of a project founded by Sorsix
-*
-* @Authors
-*  Tomce Delev
-*  Dragan Sahpaski
-*  Riste Stojanov
-*
-**/
+ *
+ * Developed as a part of a project founded by Sorsix
+ *
+ * @Authors
+ *  Tomce Delev
+ *  Dragan Sahpaski
+ *  Riste Stojanov
+ *
+ **/
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var templateCache = require('gulp-angular-templatecache');
@@ -74,7 +74,9 @@ var JS_LIB = [
     'bower_components/angular-xeditable/dist/js/xeditable.js',
     'bower_components/d3/d3.min.js',
     'bower_components/c3/c3.min.js',
-    'bower_components/angularUtils-pagination/dirPagination.js'
+    'bower_components/angularUtils-pagination/dirPagination.js',
+    'bower_components/angular-messages/angular-messages.min.js',
+    'bower_components/angular-css/angular-css.min.js'
 ];
 
 var JS_APP = [
@@ -87,33 +89,33 @@ var ADMIN_JS_APP = [
 ];
 
 /**
-*   The location of the resources for deploy
-*/
+ *   The location of the resources for deploy
+ */
 var DESTINATION = 'dest/';
 /**
-* The single page initial html file. It will be altered 
-* by this script.
-*/
+ * The single page initial html file. It will be altered
+ * by this script.
+ */
 var INDEX_FILE = 'index.html';
 var ADMIN_INDEX_FILE = "admin/index.html";
 /**
-* The name of the angular module
-*/
+ * The name of the angular module
+ */
 var  MODULE_NAME = 'wp-angular-starter';
 var  ADMIN_MODULE_NAME = 'admin-angular-starter';
 /**
-* The URL of the back-end API
-*/
+ * The URL of the back-end API
+ */
 var API_URL = 'http://localhost:8080/api';
 /**
-* Route to which the API calls will be mapped 
-*/
+ * Route to which the API calls will be mapped
+ */
 var API_ROUTE = '/api';
 
 /**
-* Task for concatenation of the js libraries used 
-* in this project 
-*/
+ * Task for concatenation of the js libraries used
+ * in this project
+ */
 gulp.task('concat_js_lib', function () {
     return gulp.src(JS_LIB) // which js files
         .pipe(concat('lib.js')) // concatenate them in lib.js
@@ -122,9 +124,9 @@ gulp.task('concat_js_lib', function () {
 
 
 /**
-* Task for concatenation of the css libraries used 
-* in this project 
-*/
+ * Task for concatenation of the css libraries used
+ * in this project
+ */
 gulp.task('concat_css_lib', function () {
     return gulp.src(CSS_LIB) // which css files
         .pipe(concat('lib.css')) // concat them in lib.css
@@ -132,9 +134,9 @@ gulp.task('concat_css_lib', function () {
 });
 
 /**
-* Task for concatenation of the js code defined  
-* in this project 
-*/
+ * Task for concatenation of the js code defined
+ * in this project
+ */
 gulp.task('concat_js_app', function () {
     return gulp.src(JS_APP)
         .pipe(concat('src.js'))
@@ -148,9 +150,9 @@ gulp.task('admin_concat_js_app', function (){
 });
 
 /**
-* Task for concatenation of the css code defined 
-* in this project 
-*/
+ * Task for concatenation of the css code defined
+ * in this project
+ */
 gulp.task('concat_css_app', function () {
     return gulp.src(CSS_APP)
         .pipe(concat('app.css'))
@@ -164,16 +166,16 @@ gulp.task('admin_concat_css_app', function () {
 });
 
 /**
-* Task for concatenation of the html templates defined 
-* in this project 
-*/
+ * Task for concatenation of the html templates defined
+ * in this project
+ */
 gulp.task('templates', function () {
     return gulp.src('views/**/**.html') // which html files
         .pipe(
-            templateCache('templates.js', { // compile them as angular templates 
-                module: MODULE_NAME,        // from module MODULE_NAME 
-                root: 'app'                 // of the app
-            }))
+        templateCache('templates.js', { // compile them as angular templates
+            module: MODULE_NAME,        // from module MODULE_NAME
+            root: 'app'                 // of the app
+        }))
         .pipe(gulp.dest(DESTINATION));
 });
 
@@ -188,9 +190,9 @@ gulp.task('admin_templates', function () {
 });
 
 /**
-* Task for adding the revision as parameter   
-* for cache braking
-*/
+ * Task for adding the revision as parameter
+ * for cache braking
+ */
 gulp.task('cache-break', function () {
     return gulp.src(INDEX_FILE) // use the INDEX_FILE as source
         .pipe(rev())            // append the revision to all resources

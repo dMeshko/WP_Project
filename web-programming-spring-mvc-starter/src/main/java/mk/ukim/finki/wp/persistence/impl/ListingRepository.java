@@ -1,6 +1,7 @@
 package mk.ukim.finki.wp.persistence.impl;
 
 import mk.ukim.finki.wp.model.Listing;
+import mk.ukim.finki.wp.model.Report;
 import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.persistence.BaseRepository;
 import mk.ukim.finki.wp.persistence.IListingRepository;
@@ -57,5 +58,40 @@ public class ListingRepository implements IListingRepository {
                 return cb.equal(root.get("user"), userId);
             }
         });
+    }
+
+    @Override
+    public List<Listing> search(String keyword) {
+        return baseRepository.customListingSearch(keyword);
+    }
+
+    @Override
+    public List<Listing> filterByDate(String date) {
+        return baseRepository.customListingSearchByDate(date);
+    }
+
+    @Override
+    public List<Report> getAllReports() {
+        return baseRepository.find(Report.class, null);
+    }
+
+    @Override
+    public List<Report> getAllUnreadReports() {
+        return baseRepository.find(Report.class, new PredicateBuilder<Report>() {
+            @Override
+            public Predicate toPredicate(CriteriaBuilder cb, CriteriaQuery<Report> cq, Root<Report> root) {
+                return cb.equal(root.get("seen"), false);
+            }
+        });
+    }
+
+    @Override
+    public void saveOrUpdateReport(Report report) {
+        baseRepository.saveOrUpdate(report);
+    }
+
+    @Override
+    public Report getReportById(Long id) {
+        return baseRepository.getById(Report.class, id);
     }
 }

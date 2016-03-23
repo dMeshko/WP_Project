@@ -1,0 +1,21 @@
+<div ng-controller="ViewListingsController">
+    <br/><br/><br/>
+
+    <div class="container">
+        <div class="col-md-12">
+            <div ng-repeat='listing in listings | limitTo : 9'>
+                <div class="col-md-4">
+                    <button class="btn btn-primary listing" ui-sref="view-listing({id: listing.id})">
+                        <div style="display:block;">
+                            <span class="title">{{listing.title}}</span>
+                            <div class="row">
+                                <span class="content">{{listing.content}}</span>
+                            </div>
+                            <br><span class="created-on">{{listing.createdOn}}</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

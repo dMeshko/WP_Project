@@ -13,6 +13,12 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
   WPAngularStarter.constant("serverURL", "http://localhost:8080/servlet-showcase");
   WPAngularStarter.constant("apiURL", "http://localhost:8080/servlet-showcase/api");
 
+  WPAngularStarter.filter('to_trusted', ['$sce', function($sce) {
+    return function (text) {
+      return $sce.trustAsHtml(text);
+    };
+  }]);
+
   WPAngularStarter.directive('fileModel', ['$parse', function ($parse) {
     return {
       restrict: 'A',
@@ -42,10 +48,11 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
       url: "/",
       views: {
         "header": {
-          templateUrl: "/admin/views/header.html"
+          templateUrl: "/admin/views/header.html",
+          controller: "HeaderController"
         },
         "content": {
-          templateUrl: "/admin/views/title.html",
+          templateUrl: "/admin/views/home.html",
           controller: "HomeController"
         }
       }
@@ -85,12 +92,20 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
           controller: "ListingController"
         }
       }
-    }).state("app.messages", {
-      url: "messages",
+    }).state("app.reports", {
+      url: "reports",
       views: {
         "content@": {
-          templateUrl: "/admin/views/listing/listings.html",
-          controller: "ListingController"
+          templateUrl: "/admin/views/listing/reports.html",
+          controller: "ReportController"
+        }
+      }
+    }).state("app.reportDetails", {
+      url: "reports/:id",
+      views: {
+        "content@": {
+          templateUrl: "/admin/views/listing/reportDetails.html",
+          controller: "ReportDetailsController"
         }
       }
     });

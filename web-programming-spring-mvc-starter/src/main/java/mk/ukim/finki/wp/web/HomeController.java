@@ -52,7 +52,7 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index(HttpServletRequest request){
-        ModelAndView modelAndView = new ModelAndView("listing");
+        ModelAndView modelAndView = new ModelAndView("forma");
 
         //User user = userService.getUser((long) 6);
         //String url = request.getHeader("Host") + request.getContextPath();
@@ -91,12 +91,12 @@ public class HomeController {
     }
 
     @RequestMapping(value="/listing",method = RequestMethod.POST)
-    public ModelAndView createListing(@RequestParam String title, @RequestParam String content, @RequestParam ArrayList<MultipartFile> file, HttpSession session){
+    public ModelAndView createListing(@RequestParam String title, @RequestParam String content, @RequestParam ArrayList<MultipartFile> file, @RequestParam(defaultValue = "0") Long lng, @RequestParam(defaultValue = "0") Long lat, HttpSession session){
         ModelAndView mav = new ModelAndView("afterEffect");
         //Long userId = Long.parseLong(String.valueOf(session.getAttribute("userId")));
         //comment the line bellow in production
         Long userId = (long)10;
-        listingService.createListing(title, content, new Date(), file, userService.getUser(userId));
+        listingService.createListing(title, content, new Date(), file, userService.getUser(userId), lng, lat);
         mav.addObject("file1", file.get(0).getOriginalFilename());
         mav.addObject("file2", file.get(1).getOriginalFilename());
         return mav;

@@ -1,0 +1,38 @@
+<div ng-controller="ListingController">
+    <br/> <br/><br/>
+
+    <form enctype="multipart/form-data">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-5 col-md-offset-4">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="title" ng-model="title"
+                               placeholder="Наслов..." ng-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea rows="10" name="content" ng-model="content" class="form-control"
+                                  placeholder="Содржина..." style="resize:none;" ng-required="true"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                            <span class="btn btn-success fileinput-button"><i
+                                    class="fa fa-file-image-o"></i><span> Прикачи слики...</span>
+                                <input type="file" multiple accept="image/*"
+                                       file-model="myFile"/></span>
+                    </div>
+
+                    <br/> <br/>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block btn-lg" ng-click="createListing()">
+                            <i class="fa fa-globe"></i><span> Објави</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

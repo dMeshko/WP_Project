@@ -1,6 +1,7 @@
 package mk.ukim.finki.wp.persistence;
 
 import mk.ukim.finki.wp.model.Listing;
+import mk.ukim.finki.wp.model.Report;
 import mk.ukim.finki.wp.model.User;
 
 import java.util.List;
@@ -15,4 +16,10 @@ public interface IListingRepository {
     public void delete(Long id);
     public User findUser(Long userId);
     public List<Listing> getAllListingsByUser(Long userId);
+    public List<Listing> search(String keyword);
+    public List<Listing> filterByDate(String date);
+    public List<Report> getAllReports();
+    public List<Report> getAllUnreadReports();
+    public void saveOrUpdateReport(Report report);
+    public Report getReportById(Long id);
 }

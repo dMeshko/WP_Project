@@ -1,0 +1,94 @@
+body{
+overflow-x: hidden;
+}
+
+.navbar-header .navbar-toggle .icon-bar{
+background-color: #c3ff12;
+}
+
+.navbar-toggle {
+border: 1px solid #c3ff12;
+}
+
+.navbar-nav > li > a:hover{
+   
+   background-color: transparent;
+}
+
+.navbar-nav > li > a:link{
+   
+   background-color: transparent;
+}
+
+.navbar-nav > li > a{
+	color: #c3ff12; font-size: 16px;
+}
+
+.form-control{
+
+	height: 48px;
+	border: 1px solid #fada5e;
+	box-shadow: inset 0 1px 1px #faf0be;
+	color: #696969;
+	font-size: 16px;
+}
+
+#main-button{
+
+	height: 48px;
+	color: white;
+
+}
+
+.btn-default{
+
+	background-color: #ffc51b;
+    border-color: #fada5e;
+}
+
+
+input[type="text"]:focus
+{   
+  border-color: #fae7b5;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+   color:  #bfc1c2;
+}
+
+.btn:hover{
+
+	background-color: #fae7b5;
+	color: white;
+	border-color: #fae7b5;
+}
+
+.jumbotron{
+
+	position: relative;
+	z-index: 1;
+	height: 100%;
+    margin-bottom: 0;
+}
+
+.jumbotron .bg{
+  	
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+  	background-image: url('../img/roommates.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0.7;
+	width: 100%;
+    height: 100%;
+}
+
+
+#cimer{
+   margin-bottom: 60px;
+   padding-top: 162px;
+}

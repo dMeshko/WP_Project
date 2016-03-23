@@ -1,12 +1,13 @@
 var WPAngularStarter = angular.module('wp-angular-starter', [
-  'ui.router',
-  'ngResource',
-  'pascalprecht.translate',
-  'smart-table',
-  'mgcrea.ngStrap',
-  'toastr',
-  'angular-loading-bar',
-  'ui.select',
-  'ngQuickDate',
-  'angularUtils.directives.dirPagination']);
+    'ui.router',
+    'ngResource',
+    'pascalprecht.translate',
+    'smart-table',
+    'mgcrea.ngStrap',
+    'toastr',
+    'angular-loading-bar',
+    'ui.select',
+    'ngQuickDate',
+    'door3.css',
+    'ngMessages']);
 

@@ -1,5 +1,8 @@
-
 .ng-scope {
-    border:1px solid black;
-    padding: 4px;
+    border: none;
+}
+
+html, body.ng-scope {
+    height: 100%;
+
 }

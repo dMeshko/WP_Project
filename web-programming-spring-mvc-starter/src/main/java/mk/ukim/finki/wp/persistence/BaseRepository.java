@@ -1,6 +1,8 @@
 package mk.ukim.finki.wp.persistence;
 
 import mk.ukim.finki.wp.model.BaseEntity;
+import mk.ukim.finki.wp.model.Listing;
+import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.persistence.helper.PredicateBuilder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -86,5 +88,23 @@ public class BaseRepository {
         int changes = em.createQuery(cd).executeUpdate();
         em.flush();
         return changes;
+    }
+
+
+    //my shit goes here..
+    public List<Listing> customListingSearch(String keyword){
+        TypedQuery<Listing> q = em.createQuery("SELECT t FROM Listing t WHERE t.title LIKE '%" + keyword + "%' OR t.content LIKE '%" + keyword + "%')", Listing.class);
+        return q.getResultList();
+    }
+
+    public List<User> customUserSearch(String keyword){
+        TypedQuery<User> q = em.createQuery("SELECT u FROM User u WHERE u.name LIKE '%" + keyword + "%' OR u.surname LIKE '%" + keyword + "%')", User.class);
+        return q.getResultList();
+    }
+
+    public List<Listing> customListingSearchByDate(String date){
+        // dateFormat dd/MM/yyyy
+        TypedQuery<Listing> q = em.createQuery("SELECT l FROM Listing l WHERE l.createdOn LIKE '" + date + "')", Listing.class);
+        return q.getResultList();
     }
 }

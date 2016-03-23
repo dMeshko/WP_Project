@@ -7,6 +7,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Past;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Darko on 2/19/2016.
@@ -38,6 +40,12 @@ public class User extends BaseEntity {
 
     private String imageURL;
 
+    @OneToMany(mappedBy = "userTo", fetch = FetchType.EAGER)
+    private List<Message> sentMessages;
+
+    @OneToMany(mappedBy = "userFrom", fetch = FetchType.EAGER)
+    private List<Message> receivedMessages;
+
     public String getUploadPath() {
         return uploadPath;
     }
@@ -50,9 +58,10 @@ public class User extends BaseEntity {
 
     private Boolean isAdmin;
 
-    public User(){}
+    public User() {
+    }
 
-    public User(String name, String surname, String birthDate, String email, String username, String password, String imageURL, Boolean isAdmin, String uploadPath){
+    public User(String name, String surname, String birthDate, String email, String username, String password, String imageURL, Boolean isAdmin, String uploadPath) {
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
@@ -81,7 +90,7 @@ public class User extends BaseEntity {
         return email;
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return username;
     }
 
@@ -89,13 +98,21 @@ public class User extends BaseEntity {
         return password;
     }
 
-    public String getImageURL(){
+    public String getImageURL() {
         return imageURL;
     }
 
     public Boolean getIsAdmin() {
 
         return isAdmin;
+    }
+
+    public List<Message> getReceivedMessages() {
+        return receivedMessages;
+    }
+
+    public List<Message> getSentMessages() {
+        return sentMessages;
     }
 
     //setters
@@ -115,7 +132,7 @@ public class User extends BaseEntity {
         this.email = email;
     }
 
-    public void setUsername(String username){
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -123,11 +140,19 @@ public class User extends BaseEntity {
         this.password = password;
     }
 
-    public void setImageURL(String imageURL){
+    public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
 
     public void setIsAdmin(Boolean isAdmin) {
         this.isAdmin = isAdmin;
+    }
+
+    public void setReceivedMessages(List<Message> receivedMessages) {
+        this.receivedMessages = receivedMessages;
+    }
+
+    public void setSentMessages(List<Message> sentMessages) {
+        this.sentMessages = sentMessages;
     }
 }

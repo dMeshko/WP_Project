@@ -13,6 +13,7 @@ import java.util.List;
  */
 public interface IUserService {
     public void signUp(String name, String surname, String birthDate, String email, String username, String password, Boolean isAdmin, MultipartFile image);
+    public void signUp(String name, String surname, String birthDate, String email, String username, String password);
     public User logIn(String username, String password);
     public void remove(Long id);
     public void update(User user);

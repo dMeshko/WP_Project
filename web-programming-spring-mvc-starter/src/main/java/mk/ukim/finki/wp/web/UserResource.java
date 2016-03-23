@@ -1,11 +1,16 @@
 package mk.ukim.finki.wp.web;
 
+import com.sun.org.apache.xpath.internal.operations.Mult;
 import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -52,5 +57,18 @@ public class UserResource {
         user.setPassword(password);
         user.setBirthDate(birthDate);
         userService.update(user);
+    }
+
+    @RequestMapping(value="/login", method=RequestMethod.POST)
+    public User loginUser(@RequestParam String username, @RequestParam String password, HttpSession session){
+        User user = userService.logIn(username, password);
+        if (user != null)
+            session.setAttribute("userId", user.getId());
+        return user;
+    }
+
+    @RequestMapping(value="/signup", method=RequestMethod.POST)
+    public void signUpUser(@RequestParam  String name, @RequestParam  String surname, @RequestParam  String birthDate, @RequestParam  String email, @RequestParam  String username, @RequestParam  String password) {
+        userService.signUp(name, surname, birthDate, email, username, password);
     }
 }
