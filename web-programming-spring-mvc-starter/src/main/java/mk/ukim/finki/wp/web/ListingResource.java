@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -31,7 +32,9 @@ public class ListingResource {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<Listing> getAllListings()
     {
-        return listingService.getAll();
+        List<Listing> listings = listingService.getAll();
+        Collections.reverse(listings);
+        return listings;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -60,7 +63,9 @@ public class ListingResource {
 
     @RequestMapping(value = "/report", method = RequestMethod.GET)
     public List<Report> getAllReports(){
-        return listingService.getAllReports();
+        List<Report> reports = listingService.getAllReports();
+        Collections.reverse(reports);
+        return reports;
     }
 
     @RequestMapping(value = "/report/unread", method = RequestMethod.GET)
@@ -101,5 +106,10 @@ public class ListingResource {
             arrayList.add(listingService.filterByDate(null, (i+1), null).size());
 
         return arrayList;
+    }
+
+    @RequestMapping(value = "/search/{keyword}", method = RequestMethod.GET)
+    public List<Listing> search(@PathVariable String keyword){
+        return listingService.search(keyword);
     }
 }

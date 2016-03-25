@@ -1,5 +1,6 @@
 package mk.ukim.finki.wp.service.imlp;
 
+import mk.ukim.finki.wp.model.Message;
 import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.persistence.IUserRepository;
 import mk.ukim.finki.wp.service.IUserService;
@@ -118,5 +119,12 @@ public class UserService implements IUserService{
     public List<User> getAllAdmins()
     {
         return userRepository.getAllAdmins();
+    }
+
+    @Override
+    public void sendMessage(String content, Long userFrom, Long userTo) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Message message = new Message(content, simpleDateFormat.format(new Date()), getUser(userFrom), getUser(userTo));
+        userRepository.sendMessage(message);
     }
 }

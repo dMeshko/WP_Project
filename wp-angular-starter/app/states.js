@@ -23,18 +23,24 @@ WPAngularStarter.config(function ($stateProvider, $urlRouterProvider) {
             url: '/signup',
             templateUrl: 'views/signup.html',
             controller: 'signupController',
-            css: 'css/signup.css'
+            data: {
+                css: 'css/signup.css'
+            }
         })
         .state('home', {
             url: '/',
             templateUrl: 'views/home.html',
             controller: 'homeController',
-            css: 'css/home.css'
+            data: {
+                css: 'css/home.css'
+            }
         })
         .state('log-in', {
             url: '/login',
             templateUrl: 'views/login.html',
             controller: 'loginController',
-            css: 'css/login.css'
+            data: {
+                css: 'css/login.css'
+            }
         });
 });

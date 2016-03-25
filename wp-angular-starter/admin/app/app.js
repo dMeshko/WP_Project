@@ -12,6 +12,7 @@ var WPAngularStarter = angular.module('admin-angular-starter', [
 
   WPAngularStarter.constant("serverURL", "http://localhost:8080/servlet-showcase");
   WPAngularStarter.constant("apiURL", "http://localhost:8080/servlet-showcase/api");
+  WPAngularStarter.constant("siteURL", "http://localhost:8000/#");
 
   WPAngularStarter.filter('to_trusted', ['$sce', function($sce) {
     return function (text) {

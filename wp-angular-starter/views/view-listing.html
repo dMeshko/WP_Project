@@ -1,8 +1,20 @@
 <div ng-controller="ViewListingController">
     <div class="container">
         <div class="row">
+
+            <button class="btn btn-danger" data-ng-click="toggleReportModal();"><i class="fa fa-crosshairs"></i> Пријави го постот</button>
+            <button class="btn btn-warning" data-ng-click="toggleMessageModal();" style="margin-left: 10px;"><i class="fa fa-envelope"></i> Прати порака</button>
+
             <div class="col-md-5" >
                 <h1>{{listing.title}}</h1>
+
+                <!-- IMAGES -->
+                <div class = "row">
+                    <div style="margin-top:10px;" class="col-md-4" data-ng-repeat="image in listing.imageURLs">
+                        <img data-ng-src = "{{serverURL + image}}" class="img img-responsive" />
+                    </div>
+                </div>
+                <!-- END OF IMAGES -->
 
                 <p>{{listing.content}}</p>
                 <br/>
@@ -15,5 +27,36 @@
                 </div>
             </div>
         </div>
+
+        <!-- THE REPORT MODAL -->
+        <modal title="Пријави го постот" visible="showReport">
+            <form role="form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="content">Забелешка: </label><br />
+                    <textarea id="content" class="form-control" rows="10" data-ng-model="report.content"></textarea>
+                </div>
+                <input type="hidden" data-ng-model = "report.listingId" />
+                <button type="button" class="btn btn-default" data-ng-click="toggleReportModal();"><i class="fa fa-times"></i> Откажи</button>
+                <button type="submit" class="btn btn-danger" data-ng-click="reportPost();"><i class="fa fa-crosshairs"></i> Пријави</button>
+            </form>
+        </modal>
+        <!-- END OF THE REPORT MODAL -->
+
+        <!-- THE MESSAGE MODAL -->
+        <modal title="Испрати порака" visible="showMessage">
+            <form role="form" onsubmit="return false;">
+                <div class="form-group">
+                    <h3><i class="fa fa-user"></i> {{listing.user.username}}</h3>
+                </div>
+                <div class="form-group">
+                    <label for="message">Порака: </label><br />
+                    <textarea id="message" class="form-control" rows="10" data-ng-model="message.content"></textarea>
+                </div>
+                <input type="hidden" data-ng-model = "message.userToId" />
+                <button type="button" class="btn btn-default" data-ng-click="toggleMessageModal();"><i class="fa fa-times"></i> Откажи</button>
+                <button type="submit" class="btn btn-success" data-ng-click="sendMessage();"><i class="fa fa-send"></i> Прати порака</button>
+            </form>
+        </modal>
+        <!-- END OF THE MESSAGE MODAL -->
     </div>
 </div>

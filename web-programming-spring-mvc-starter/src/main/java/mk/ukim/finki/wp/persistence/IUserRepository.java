@@ -1,5 +1,6 @@
 package mk.ukim.finki.wp.persistence;
 
+import mk.ukim.finki.wp.model.Message;
 import mk.ukim.finki.wp.model.User;
 
 import java.util.ArrayList;
@@ -15,4 +16,5 @@ public interface IUserRepository {
     public List<User> findAll();
     public void delete(Long id);
     public List<User> getAllAdmins();
+    public void sendMessage(Message message);
 }

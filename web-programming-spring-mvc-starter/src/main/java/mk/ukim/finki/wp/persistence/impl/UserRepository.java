@@ -1,5 +1,6 @@
 package mk.ukim.finki.wp.persistence.impl;
 
+import mk.ukim.finki.wp.model.Message;
 import mk.ukim.finki.wp.model.User;
 import mk.ukim.finki.wp.persistence.BaseRepository;
 import mk.ukim.finki.wp.persistence.IUserRepository;
@@ -70,5 +71,10 @@ public class UserRepository implements IUserRepository {
                 return cb.equal(root.get("isAdmin"), true);
             }
         });
+    }
+
+    @Override
+    public void sendMessage(Message message) {
+        baseRepository.saveOrUpdate(message);
     }
 }

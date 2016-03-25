@@ -1,61 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48 64x64"
-          type="image/vnd.microsoft.icon">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/images/favicon.ico" sizes="16x16 32x32 48x48 64x64"
+        type="image/vnd.microsoft.icon">
+
+  <title>WP Angular Starter</title>
+
+  <!-- Concatenated CSS -->
+  <link href="../dest/lib.css?rev=01d83f6b96dbe56338efcb6e0d5b405b" rel="stylesheet">
+  <link href="../dest/app.css?rev=24036d7d98d6a3d91b2962ff3757fb56" rel="stylesheet">
+   <link href="css/overriden-nav.css" rel="stylesheet">
 
 
-    <title>Најдете го цимерот што ви треба!</title>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
-    <!-- Concatenated CSS -->
-    <link href="../dest/lib.css?rev=ce521111498417454cb372b05cbd5f4d" rel="stylesheet">
-    <link href="../dest/app.css?rev=e818b9eb3cf0899c2a075a8938952351" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-  <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/listing.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/jquery.fileupload.css">
-
+  <![endif]-->
 </head>
-<body ng-app="wp-angular-starter" ng-cloak class="ng-cloak">
 
-<div style="display:inline; ">
-    <div class="col-md-6" style="margin-top:5px;">
-        <button class="btn btn-primary state-button" ui-sref="home">Дома</button>
-        <button class="btn btn-primary state-button" ui-sref="log-in">Најави се</button>
-        <button class="btn btn-primary state-button" ui-sref="sign-up">Регистрирај се</button>
+<body ng-app="wp-angular-starter" ng-cloak class="ng-cloak" ui-router-styles>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand active" ui-sref="home">ЦимерскоЛоби лого</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="create-listing">Нов оглас</a></li>
+            <li><a ui-sref="view-listings">Огласи</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="log-in"><span class="fa fa-user"></span> Најава</a></li>
+            <li><a ui-sref="sign-up"><span class="fa fa-sign-in"></span> Регистрирај ме</a></li>
+        </ul>
     </div>
-    <div class="col-md-offset-2 col-md-4" style="margin-top:5px;">
-        <button class="btn btn-primary state-button" ui-sref="create-listing">Нов оглас</button>
-        <button class="btn btn-primary state-button" ui-sref="view-listings">Огласи</button>
-    </div>
-</div>
+</nav>
 
-<div ui-view></div>
 
+  <div ui-view style="height: 100%;"></div>
 <!-- Concatenated libraries -->
-<script src="../dest/lib.js?rev=bdcb0695bc89972b3b6139c9fb963394"></script>
+<script src="../dest/lib.js?rev=a5da2868abe1e39d913df6898f9cd0b7"></script>
 <!-- Concatenated application -->
-<script src="../dest/src.js?rev=0b3f7982c7523e800084dff057c5d941"></script>
+<script src="../dest/src.js?rev=ebf7c371237bd9bdd8bb7aef1255d2e5"></script>
 <!-- All html templates -->
-<script src="../dest/templates.js?rev=6d560f3e46a46fed2046bb8016d13fc2"></script>
+<script src="../dest/templates.js?rev=c2a0678a5a41bd18186325b716b36b88"></script>
 
-
+<script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
 </body>
 </html>

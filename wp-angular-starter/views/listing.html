@@ -1,19 +1,28 @@
-<div ng-controller="ListingController">
-    <br/> <br/><br/>
+<div enctype="multipart/form-data" style="margin-top:90px;">
+    <div class="container">
 
-    <form enctype="multipart/form-data">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-5 col-md-offset-4">
-                    <div class="form-group">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-1">
+                <form ng-submit="createListing()" name="listing-form" novalidate>
+                    <div class="form-group"
+                         ng-class="{ 'has-error': (submitted && listing-form.title.$invalid) }">
                         <input class="form-control" type="text" name="title" ng-model="title"
-                               placeholder="Наслов..." ng-required="true">
+                               placeholder="Наслов..." required>
+
+                        <div class="help-block" ng-messages="listing-form.title.$error"
+                             ng-if="submitted">
+                            <p ng-message="required">Внеси наслов на огласот</p>
+                        </div>
+                    </div>
+                    <div class="form-group"
+                         ng-class="{ 'has-error': (submitted && listing-form.content.$invalid) }">
+                        <textarea rows="10" name="content" ng-model="content" class="form-control"
+                                  placeholder="Содржина..." style="resize:none;" required></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <textarea rows="10" name="content" ng-model="content" class="form-control"
-                                  placeholder="Содржина..." style="resize:none;" ng-required="true"></textarea>
+                    <div class="help-block" ng-messages="listing-form.content.$error"
+                         ng-if="submitted || listing-form.content.$touched">
+                        <p ng-message="required">Внеси оглас</p>
                     </div>
 
                     <div class="form-group">
@@ -26,13 +35,76 @@
                     <br/> <br/>
 
                     <div class="form-group">
-                        <button class="btn btn-primary btn-block btn-lg" ng-click="createListing()">
+                        <button class="btn btn-primary btn-block btn-lg" ng-click="submitted=true"
+                                ng-keyup="submitted=false">
                             <i class="fa fa-globe"></i><span> Објави</span>
                         </button>
                     </div>
+                </form>
+            </div>
+            <div class="col-md-5">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <button class="btn btn-default btn-block">
+                            <div class="panel-heading" data-toggle="collapse" href="#collapse1">
+                                <h4 class="panel-title">
+                                    <i class="fa fa-chevron-down" style="font-size:15px;"></i>
+                                    <span>ВОДИЧ1</span>
+                                </h4>
+                            </div>
+                        </button>
 
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <p class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <button class="btn btn-default btn-block">
+                            <div class="panel-heading" data-toggle="collapse" href="#collapse2">
+                                <h4 class="panel-title">
+                                    <i class="fa fa-chevron-down" style="font-size:15px;"></i>
+                                    <span>ВОДИЧ2</span>
+                                </h4>
+                            </div>
+                        </button>
+
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <p class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <button class="btn btn-default btn-block">
+                            <div class="panel-heading" data-toggle="collapse" href="#collapse3">
+                                <h4 class="panel-title">
+                                    <i class="fa fa-chevron-down" style="font-size:15px;"></i>
+                                    <span>ВОДИЧ3</span>
+                                </h4>
+                            </div>
+                        </button>
+
+                        <div id="collapse3" class="panel-collapse collapse">
+                            <p class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
 </div>

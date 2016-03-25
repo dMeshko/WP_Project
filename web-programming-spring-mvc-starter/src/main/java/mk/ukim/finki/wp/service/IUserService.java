@@ -20,4 +20,5 @@ public interface IUserService {
     public User getUser(Long id);
     public List<User> getAllUsers();
     public List<User> getAllAdmins();
+    public void sendMessage(String content, Long userFrom, Long userTo);
 }

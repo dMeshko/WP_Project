@@ -1,7 +1,7 @@
 /**
  * Created by milew on 23.2.2016.
  */
-WPAngularStarter.factory('ListingService', ['$http', function ($http) {
+WPAngularStarter.factory('ListingService', ['$http', 'apiURL', function ($http, apiURL) {
     return {
         save: function (title, content, file) {
             var fd = new FormData();
@@ -40,6 +40,15 @@ WPAngularStarter.factory('ListingService', ['$http', function ($http) {
                 url: 'http://localhost:8080/servlet-showcase/api/listing/' + id,
                 method: 'DELETE'
             });
+        },
+
+        reportPost: function(report){
+            var data = $.param({
+                "content": report.content,
+                "listingId": report.listingId
+            });
+            var config = {headers: {'Content-Type': 'application/x-www-form-urlencoded'}};
+            return $http.post(apiURL + "/listing/report/new", data, config);
         }
     }
 }]);

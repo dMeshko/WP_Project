@@ -2,7 +2,7 @@
  * Created by Darko on 3/20/2016.
  */
 
-WPAngularStarter.controller("ReportDetailsController", ["$scope", "$state", "$stateParams", "ListingService", "serverURL", function ($scope, $state, $stateParams, ListingService, serverURL) {
+WPAngularStarter.controller("ReportDetailsController", ["$scope", "$state", "$stateParams", "ListingService", "serverURL", "siteURL", "$window", function ($scope, $state, $stateParams, ListingService, serverURL, siteURL, $window) {
     $scope.report = {};
     $scope.serverURL = serverURL;
 
@@ -23,7 +23,11 @@ WPAngularStarter.controller("ReportDetailsController", ["$scope", "$state", "$st
         ListingService.deleteListing(id).then(function (){
             $state.go("app.reports");
         }, function (){
-            console.log("error occured while attempting to remove the listing!!");
+            console.log("error occurred while attempting to remove the listing!!");
         });
+    };
+
+    $scope.viewListing = function (id){
+        $window.open(siteURL + "/listing/" + id, "_blank");
     };
 }]);

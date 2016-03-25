@@ -2,7 +2,7 @@
  * Created by Dell on 16-Mar-16.
  */
 
-WPAngularStarter.controller('loginController', ['$scope', 'toastr', '$state', 'User', function($scope, toastr, $state, User){
+WPAngularStarter.controller('loginController', ['$scope', 'toastr', '$state', 'UserService', function($scope, toastr, $state, UserService){
 
     $scope.username = '';
     $scope.password = '';
@@ -22,7 +22,7 @@ WPAngularStarter.controller('loginController', ['$scope', 'toastr', '$state', 'U
                 }
             };
 
-            User.loginUser(data, config).success(function(data){
+            UserService.loginUser(data, config).success(function(data){
                 if(data){
                     $('#err-message').removeClass('show');
                     toastr.success("successful logging in");

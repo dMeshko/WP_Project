@@ -8,6 +8,15 @@ var WPAngularStarter = angular.module('wp-angular-starter', [
     'angular-loading-bar',
     'ui.select',
     'ngQuickDate',
-    'door3.css',
-    'ngMessages']);
+    'uiRouterStyles',
+    'ngMessages',
+    'angularUtils.directives.dirPagination']);
+
+WPAngularStarter.constant("serverURL", "http://localhost:8080/servlet-showcase");
+WPAngularStarter.constant("apiURL", "http://localhost:8080/servlet-showcase/api");
+WPAngularStarter.constant("siteURL", "http://localhost:8000/#");
+
+WPAngularStarter.config(function (paginationTemplateProvider){
+    paginationTemplateProvider.setPath('../bower_components/angularUtils-pagination/dirPagination.tpl.html');
+});
 

@@ -2,7 +2,7 @@
  * Created by Dell on 16-Mar-16.
  */
 
-WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'User', function($scope,$state, toastr, User){
+WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'UserService', function($scope,$state, toastr, UserService){
 
     $scope.name = '';
     $scope.surname = '';
@@ -47,7 +47,7 @@ WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'U
             };
 
 
-            User.saveUser(data, config).success(function (data) {
+            UserService.saveUser(data, config).success(function (data) {
 
                 toastr.success("User saved");
 
@@ -95,7 +95,7 @@ WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'U
 
     $scope.login = function(){
         $state.go("log-in");
-    }
+    };
 
 
     function calculateDate(){

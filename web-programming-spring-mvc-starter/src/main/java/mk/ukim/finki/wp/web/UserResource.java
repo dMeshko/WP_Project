@@ -71,4 +71,12 @@ public class UserResource {
     public void signUpUser(@RequestParam  String name, @RequestParam  String surname, @RequestParam  String birthDate, @RequestParam  String email, @RequestParam  String username, @RequestParam  String password) {
         userService.signUp(name, surname, birthDate, email, username, password);
     }
+
+    @RequestMapping(value = "/message/new", method = RequestMethod.POST)
+    public void sendMessage(@RequestParam String content, @RequestParam Long userToId, HttpSession httpSession){
+        // IMPORTANT: DURING LOGIN SET SESSION VARIABLE NAMED "userId" WITH THE APPROPRIATE USER ID VAL.
+        //Long userId = Long.parseLong(String.valueOf(session.getAttribute("userId")));
+        Long userId = (long)1;
+        userService.sendMessage(content, userId, userToId);
+    }
 }

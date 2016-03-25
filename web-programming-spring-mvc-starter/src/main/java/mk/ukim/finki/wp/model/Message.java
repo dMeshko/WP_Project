@@ -1,8 +1,13 @@
 package mk.ukim.finki.wp.model;
 
+import org.hibernate.annotations.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +17,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "messages")
+@JsonIgnoreProperties({"userFrom", "userTo"})
 public class Message extends BaseEntity {
     @Length(max = 5000)
     private String content;

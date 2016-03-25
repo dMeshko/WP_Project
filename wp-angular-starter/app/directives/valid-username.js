@@ -3,7 +3,7 @@
  */
 
 
-WPAngularStarter.directive('validUsername', ['User', function(User){
+WPAngularStarter.directive('validUsername', ['UserService', function(UserService){
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -13,7 +13,7 @@ WPAngularStarter.directive('validUsername', ['User', function(User){
                 if (e.type == 'focusout' || e.keyCode == '13') {
 
                     ngModel.$setValidity('unique', true);
-                    User.isUnique(elm.val()).success(function (data) {
+                    UserService.isUnique(elm.val()).success(function (data) {
 
                         if (data) {
                             ngModel.$setValidity('unique', false);
