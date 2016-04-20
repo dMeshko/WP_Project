@@ -1,0 +1,295 @@
+2016-02-29 07:56:03,086 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-02-29 07:56:03,174 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Mon Feb 29 07:56:03 CET 2016]; root of context hierarchy
+2016-02-29 07:56:03,214 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-02-29 07:56:03,460 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-02-29 07:56:03,849 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-02-29 07:56:03,872 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 07:56:04,127 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-02-29 07:56:04,156 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-02-29 07:56:04,341 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-02-29 07:56:04,346 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-02-29 07:56:04,349 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-02-29 07:56:04,673 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-02-29 07:56:05,401 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-02-29 07:56:05,800 INFO [localhost-startStop-1] o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2016-02-29 07:56:05,891 INFO [localhost-startStop-1] o.h.v.i.u.Version [Version.java:27] HV000001: Hibernate Validator 5.1.3.Final
+2016-02-29 07:56:07,107 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:207] HHH000228: Running hbm2ddl schema update
+2016-02-29 07:56:07,107 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:218] HHH000102: Fetching database metadata
+2016-02-29 07:56:07,111 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:230] HHH000396: Updating schema
+2016-02-29 07:56:07,204 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.image_urls
+2016-02-29 07:56:07,205 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [image_url, id]
+2016-02-29 07:56:07,205 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_l7bw52eg0668q96j2tghmhn2j]
+2016-02-29 07:56:07,205 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_8ddf373eeg8y6vmptpj9u3ifq]
+2016-02-29 07:56:07,228 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.listings
+2016-02-29 07:56:07,228 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [user_id, id, title, createdon, content]
+2016-02-29 07:56:07,229 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_qv926x4jhroce71534nmady6a]
+2016-02-29 07:56:07,229 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [fk_qv926x4jhroce71534nmady6a, primary]
+2016-02-29 07:56:07,248 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.messages
+2016-02-29 07:56:07,249 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [senton, id, content]
+2016-02-29 07:56:07,249 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 07:56:07,250 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [primary]
+2016-02-29 07:56:07,270 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.users
+2016-02-29 07:56:07,271 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [password, birthdate, isadmin, surname, imageurl, name, id, email, username]
+2016-02-29 07:56:07,271 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 07:56:07,272 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_r43af9ap4edm43mmtq01oddj6, primary]
+2016-02-29 07:56:08,295 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:267] HHH000232: Schema update complete
+2016-02-29 07:56:08,739 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 5648 ms
+2016-02-29 07:56:08,779 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:485] FrameworkServlet 'dispatcherServlet': initialization started
+2016-02-29 07:56:08,784 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 07:56:08 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 07:56:08,786 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-core-config.xml]
+2016-02-29 07:56:08,831 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-view-config.xml]
+2016-02-29 07:56:09,009 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 07:56:09,255 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.index(javax.servlet.http.HttpServletRequest)
+2016-02-29 07:56:09,255 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.login()
+2016-02-29 07:56:09,256 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.afterSubmit(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile)
+2016-02-29 07:56:09,256 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/listing],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.createListing(java.lang.String,java.lang.String,java.util.ArrayList<org.springframework.web.multipart.MultipartFile>,javax.servlet.http.HttpSession)
+2016-02-29 07:56:09,260 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListings()
+2016-02-29 07:56:09,260 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing/user/{id}],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListingsByUser(java.lang.Long)
+2016-02-29 07:56:09,263 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/remove/{id}],methods=[DELETE],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.UserResource.removeUser(java.lang.Long)
+2016-02-29 07:56:09,263 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllUsers()
+2016-02-29 07:56:09,264 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/admin],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllAdmins()
+2016-02-29 07:56:09,264 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/{id}],methods=[GET],produces=[application/json]}" onto public mk.ukim.finki.wp.model.User mk.ukim.finki.wp.web.UserResource.getUser(java.lang.Long)
+2016-02-29 07:56:09,774 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 07:56:08 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 07:56:09,850 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 07:56:08 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 07:56:09,967 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2016-02-29 07:56:09,977 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:301] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2016-02-29 07:56:10,002 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2016-02-29 07:56:10,051 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:504] FrameworkServlet 'dispatcherServlet': initialization completed in 1271 ms
+2016-02-29 07:59:27,266 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-02-29 07:59:27,377 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Mon Feb 29 07:59:27 CET 2016]; root of context hierarchy
+2016-02-29 07:59:27,443 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-02-29 07:59:27,715 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-02-29 07:59:28,114 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-02-29 07:59:28,138 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 07:59:28,429 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-02-29 07:59:28,477 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-02-29 07:59:28,698 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-02-29 07:59:28,702 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-02-29 07:59:28,705 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-02-29 07:59:29,022 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-02-29 07:59:29,826 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-02-29 07:59:30,226 INFO [localhost-startStop-1] o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2016-02-29 07:59:30,313 INFO [localhost-startStop-1] o.h.v.i.u.Version [Version.java:27] HV000001: Hibernate Validator 5.1.3.Final
+2016-02-29 07:59:31,597 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:207] HHH000228: Running hbm2ddl schema update
+2016-02-29 07:59:31,598 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:218] HHH000102: Fetching database metadata
+2016-02-29 07:59:31,602 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:230] HHH000396: Updating schema
+2016-02-29 07:59:31,674 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.image_urls
+2016-02-29 07:59:31,675 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [image_url, id]
+2016-02-29 07:59:31,675 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_l7bw52eg0668q96j2tghmhn2j]
+2016-02-29 07:59:31,676 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_8ddf373eeg8y6vmptpj9u3ifq]
+2016-02-29 07:59:31,693 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.listings
+2016-02-29 07:59:31,694 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [user_id, id, title, createdon, content]
+2016-02-29 07:59:31,695 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_qv926x4jhroce71534nmady6a]
+2016-02-29 07:59:31,695 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [fk_qv926x4jhroce71534nmady6a, primary]
+2016-02-29 07:59:31,727 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.messages
+2016-02-29 07:59:31,728 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [senton, id, content]
+2016-02-29 07:59:31,728 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 07:59:31,729 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [primary]
+2016-02-29 07:59:31,749 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.users
+2016-02-29 07:59:31,750 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [password, birthdate, isadmin, surname, imageurl, name, uploadpath, id, email, username]
+2016-02-29 07:59:31,750 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 07:59:31,750 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_r43af9ap4edm43mmtq01oddj6, primary]
+2016-02-29 07:59:31,752 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:267] HHH000232: Schema update complete
+2016-02-29 07:59:32,188 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 4917 ms
+2016-02-29 07:59:32,228 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:485] FrameworkServlet 'dispatcherServlet': initialization started
+2016-02-29 07:59:32,234 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 07:59:32 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 07:59:32,235 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-core-config.xml]
+2016-02-29 07:59:32,284 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-view-config.xml]
+2016-02-29 07:59:32,495 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 07:59:32,715 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.index(javax.servlet.http.HttpServletRequest)
+2016-02-29 07:59:32,716 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.login()
+2016-02-29 07:59:32,717 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.afterSubmit(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile)
+2016-02-29 07:59:32,718 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/listing],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.createListing(java.lang.String,java.lang.String,java.util.ArrayList<org.springframework.web.multipart.MultipartFile>,javax.servlet.http.HttpSession)
+2016-02-29 07:59:32,723 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListings()
+2016-02-29 07:59:32,723 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing/user/{id}],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListingsByUser(java.lang.Long)
+2016-02-29 07:59:32,728 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/remove/{id}],methods=[DELETE],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.UserResource.removeUser(java.lang.Long)
+2016-02-29 07:59:32,729 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllUsers()
+2016-02-29 07:59:32,730 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/{id}],methods=[GET],produces=[application/json]}" onto public mk.ukim.finki.wp.model.User mk.ukim.finki.wp.web.UserResource.getUser(java.lang.Long)
+2016-02-29 07:59:32,730 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/admin],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllAdmins()
+2016-02-29 07:59:33,230 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 07:59:32 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 07:59:33,294 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 07:59:32 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 07:59:33,418 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2016-02-29 07:59:33,433 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:301] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2016-02-29 07:59:33,448 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2016-02-29 07:59:33,508 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:504] FrameworkServlet 'dispatcherServlet': initialization completed in 1279 ms
+2016-02-29 08:09:26,343 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-02-29 08:09:26,504 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Mon Feb 29 08:09:26 CET 2016]; root of context hierarchy
+2016-02-29 08:09:26,744 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-02-29 08:09:27,157 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-02-29 08:09:27,678 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-02-29 08:09:27,732 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 08:09:28,037 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-02-29 08:09:28,089 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-02-29 08:09:28,352 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-02-29 08:09:28,356 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-02-29 08:09:28,362 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-02-29 08:09:28,761 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-02-29 08:09:29,475 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-02-29 08:09:29,792 INFO [localhost-startStop-1] o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2016-02-29 08:09:29,858 INFO [localhost-startStop-1] o.h.v.i.u.Version [Version.java:27] HV000001: Hibernate Validator 5.1.3.Final
+2016-02-29 08:09:30,756 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:207] HHH000228: Running hbm2ddl schema update
+2016-02-29 08:09:30,757 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:218] HHH000102: Fetching database metadata
+2016-02-29 08:09:30,760 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:230] HHH000396: Updating schema
+2016-02-29 08:09:30,803 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.image_urls
+2016-02-29 08:09:30,804 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [image_url, id]
+2016-02-29 08:09:30,804 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_l7bw52eg0668q96j2tghmhn2j]
+2016-02-29 08:09:30,805 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_8ddf373eeg8y6vmptpj9u3ifq]
+2016-02-29 08:09:30,822 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.listings
+2016-02-29 08:09:30,823 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [user_id, id, title, createdon, content]
+2016-02-29 08:09:30,823 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_qv926x4jhroce71534nmady6a]
+2016-02-29 08:09:30,824 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [fk_qv926x4jhroce71534nmady6a, primary]
+2016-02-29 08:09:30,843 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.messages
+2016-02-29 08:09:30,843 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [senton, id, content]
+2016-02-29 08:09:30,843 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 08:09:30,844 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [primary]
+2016-02-29 08:09:30,859 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.users
+2016-02-29 08:09:30,860 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [password, birthdate, isadmin, surname, imageurl, name, uploadpath, id, email, username]
+2016-02-29 08:09:30,860 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 08:09:30,860 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_r43af9ap4edm43mmtq01oddj6, primary]
+2016-02-29 08:09:30,861 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:267] HHH000232: Schema update complete
+2016-02-29 08:09:31,368 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 5002 ms
+2016-02-29 08:09:31,404 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:485] FrameworkServlet 'dispatcherServlet': initialization started
+2016-02-29 08:09:31,409 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 08:09:31 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 08:09:31,412 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-core-config.xml]
+2016-02-29 08:09:31,462 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-view-config.xml]
+2016-02-29 08:09:31,668 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 08:09:31,908 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.index(javax.servlet.http.HttpServletRequest)
+2016-02-29 08:09:31,909 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.login()
+2016-02-29 08:09:31,909 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.afterSubmit(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile)
+2016-02-29 08:09:31,910 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/listing],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.createListing(java.lang.String,java.lang.String,java.util.ArrayList<org.springframework.web.multipart.MultipartFile>,javax.servlet.http.HttpSession)
+2016-02-29 08:09:31,913 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListings()
+2016-02-29 08:09:31,914 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing/user/{id}],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListingsByUser(java.lang.Long)
+2016-02-29 08:09:31,916 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/remove/{id}],methods=[DELETE],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.UserResource.removeUser(java.lang.Long)
+2016-02-29 08:09:31,917 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllUsers()
+2016-02-29 08:09:31,918 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/{id}],methods=[GET],produces=[application/json]}" onto public mk.ukim.finki.wp.model.User mk.ukim.finki.wp.web.UserResource.getUser(java.lang.Long)
+2016-02-29 08:09:31,918 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/admin],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllAdmins()
+2016-02-29 08:09:32,484 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 08:09:31 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 08:09:32,537 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 08:09:31 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 08:09:32,656 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2016-02-29 08:09:32,674 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:301] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2016-02-29 08:09:32,707 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2016-02-29 08:09:32,777 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:504] FrameworkServlet 'dispatcherServlet': initialization completed in 1372 ms
+2016-02-29 08:13:05,459 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-02-29 08:13:05,591 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Mon Feb 29 08:13:05 CET 2016]; root of context hierarchy
+2016-02-29 08:13:05,656 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-02-29 08:13:05,910 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-02-29 08:13:06,431 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-02-29 08:13:06,459 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 08:13:06,788 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-02-29 08:13:06,830 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-02-29 08:13:07,076 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-02-29 08:13:07,080 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-02-29 08:13:07,083 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-02-29 08:13:07,477 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-02-29 08:13:08,354 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-02-29 08:13:08,661 INFO [localhost-startStop-1] o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2016-02-29 08:13:08,753 INFO [localhost-startStop-1] o.h.v.i.u.Version [Version.java:27] HV000001: Hibernate Validator 5.1.3.Final
+2016-02-29 08:13:10,294 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:207] HHH000228: Running hbm2ddl schema update
+2016-02-29 08:13:10,296 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:218] HHH000102: Fetching database metadata
+2016-02-29 08:13:10,302 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:230] HHH000396: Updating schema
+2016-02-29 08:13:10,412 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.image_urls
+2016-02-29 08:13:10,413 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [image_url, id]
+2016-02-29 08:13:10,414 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_l7bw52eg0668q96j2tghmhn2j]
+2016-02-29 08:13:10,414 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_8ddf373eeg8y6vmptpj9u3ifq]
+2016-02-29 08:13:10,435 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.listings
+2016-02-29 08:13:10,435 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [user_id, id, title, createdon, content]
+2016-02-29 08:13:10,437 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_qv926x4jhroce71534nmady6a]
+2016-02-29 08:13:10,438 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [fk_qv926x4jhroce71534nmady6a, primary]
+2016-02-29 08:13:10,459 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.messages
+2016-02-29 08:13:10,460 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [senton, id, content]
+2016-02-29 08:13:10,460 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 08:13:10,461 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [primary]
+2016-02-29 08:13:10,482 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.users
+2016-02-29 08:13:10,482 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [password, birthdate, isadmin, surname, imageurl, name, uploadpath, id, email, username]
+2016-02-29 08:13:10,483 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 08:13:10,484 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_r43af9ap4edm43mmtq01oddj6, primary]
+2016-02-29 08:13:10,486 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:267] HHH000232: Schema update complete
+2016-02-29 08:13:11,115 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 5650 ms
+2016-02-29 08:13:11,151 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:485] FrameworkServlet 'dispatcherServlet': initialization started
+2016-02-29 08:13:11,154 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 08:13:11 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 08:13:11,155 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-core-config.xml]
+2016-02-29 08:13:11,205 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-view-config.xml]
+2016-02-29 08:13:11,369 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 08:13:11,617 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.index(javax.servlet.http.HttpServletRequest)
+2016-02-29 08:13:11,618 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.login()
+2016-02-29 08:13:11,619 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.afterSubmit(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile)
+2016-02-29 08:13:11,620 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/listing],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.createListing(java.lang.String,java.lang.String,java.util.ArrayList<org.springframework.web.multipart.MultipartFile>,javax.servlet.http.HttpSession)
+2016-02-29 08:13:11,625 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListings()
+2016-02-29 08:13:11,627 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing/user/{id}],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListingsByUser(java.lang.Long)
+2016-02-29 08:13:11,630 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/remove/{id}],methods=[DELETE],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.UserResource.removeUser(java.lang.Long)
+2016-02-29 08:13:11,631 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllUsers()
+2016-02-29 08:13:11,632 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/admin],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllAdmins()
+2016-02-29 08:13:11,633 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/{id}],methods=[GET],produces=[application/json]}" onto public mk.ukim.finki.wp.model.User mk.ukim.finki.wp.web.UserResource.getUser(java.lang.Long)
+2016-02-29 08:13:12,083 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 08:13:11 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 08:13:12,157 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 08:13:11 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 08:13:12,249 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2016-02-29 08:13:12,262 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:301] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2016-02-29 08:13:12,271 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2016-02-29 08:13:12,342 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:504] FrameworkServlet 'dispatcherServlet': initialization completed in 1191 ms
+2016-02-29 08:14:42,911 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-02-29 08:14:43,005 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Mon Feb 29 08:14:43 CET 2016]; root of context hierarchy
+2016-02-29 08:14:43,048 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-02-29 08:14:43,359 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-02-29 08:14:43,811 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-02-29 08:14:43,834 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 08:14:44,112 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-02-29 08:14:44,150 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-02-29 08:14:44,408 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-02-29 08:14:44,412 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-02-29 08:14:44,415 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-02-29 08:14:44,725 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-02-29 08:14:45,432 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-02-29 08:14:45,693 INFO [localhost-startStop-1] o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2016-02-29 08:14:45,777 INFO [localhost-startStop-1] o.h.v.i.u.Version [Version.java:27] HV000001: Hibernate Validator 5.1.3.Final
+2016-02-29 08:14:46,972 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:207] HHH000228: Running hbm2ddl schema update
+2016-02-29 08:14:46,973 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:218] HHH000102: Fetching database metadata
+2016-02-29 08:14:46,976 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:230] HHH000396: Updating schema
+2016-02-29 08:14:47,036 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.image_urls
+2016-02-29 08:14:47,036 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [image_url, id]
+2016-02-29 08:14:47,037 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_l7bw52eg0668q96j2tghmhn2j]
+2016-02-29 08:14:47,037 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_8ddf373eeg8y6vmptpj9u3ifq]
+2016-02-29 08:14:47,064 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.listings
+2016-02-29 08:14:47,064 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [user_id, id, title, createdon, content]
+2016-02-29 08:14:47,065 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_qv926x4jhroce71534nmady6a]
+2016-02-29 08:14:47,066 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [fk_qv926x4jhroce71534nmady6a, primary]
+2016-02-29 08:14:47,080 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.messages
+2016-02-29 08:14:47,081 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [senton, id, content]
+2016-02-29 08:14:47,081 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 08:14:47,082 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [primary]
+2016-02-29 08:14:47,102 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.users
+2016-02-29 08:14:47,102 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [password, birthdate, isadmin, surname, imageurl, name, uploadpath, id, email, username]
+2016-02-29 08:14:47,103 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-02-29 08:14:47,103 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_r43af9ap4edm43mmtq01oddj6, primary]
+2016-02-29 08:14:47,105 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:267] HHH000232: Schema update complete
+2016-02-29 08:14:47,569 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 4654 ms
+2016-02-29 08:14:47,606 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:485] FrameworkServlet 'dispatcherServlet': initialization started
+2016-02-29 08:14:47,611 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 08:14:47 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 08:14:47,612 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-core-config.xml]
+2016-02-29 08:14:47,660 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-view-config.xml]
+2016-02-29 08:14:47,805 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-02-29 08:14:48,035 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.index(javax.servlet.http.HttpServletRequest)
+2016-02-29 08:14:48,036 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.login()
+2016-02-29 08:14:48,037 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.afterSubmit(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile)
+2016-02-29 08:14:48,037 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/listing],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.createListing(java.lang.String,java.lang.String,java.util.ArrayList<org.springframework.web.multipart.MultipartFile>,javax.servlet.http.HttpSession)
+2016-02-29 08:14:48,040 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListings()
+2016-02-29 08:14:48,041 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing/user/{id}],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListingsByUser(java.lang.Long)
+2016-02-29 08:14:48,043 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/remove/{id}],methods=[DELETE],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.UserResource.removeUser(java.lang.Long)
+2016-02-29 08:14:48,043 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/{id}],methods=[GET],produces=[application/json]}" onto public mk.ukim.finki.wp.model.User mk.ukim.finki.wp.web.UserResource.getUser(java.lang.Long)
+2016-02-29 08:14:48,044 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllUsers()
+2016-02-29 08:14:48,044 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/admin],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllAdmins()
+2016-02-29 08:14:48,538 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 08:14:47 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 08:14:48,611 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Feb 29 08:14:47 CET 2016]; parent: Root WebApplicationContext
+2016-02-29 08:14:48,737 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2016-02-29 08:14:48,752 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:301] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2016-02-29 08:14:48,760 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2016-02-29 08:14:48,820 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:504] FrameworkServlet 'dispatcherServlet': initialization completed in 1213 ms

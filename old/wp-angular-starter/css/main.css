@@ -1,0 +1,8 @@
+.ng-scope {
+    border: none;
+}
+
+html, body.ng-scope {
+    height: 100%;
+
+}

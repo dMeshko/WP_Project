@@ -1,0 +1,24 @@
+.listing {
+    width: 280px;
+    height: 130px;
+    border-radius: 0;
+    margin-bottom: 30px;
+    padding-bottom: 100px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 2em;
+}
+
+.content {
+    font-size: 0.8em;
+}
+
+.created-on {
+    vertical-align: bottom;
+}
+
+.state-button {
+    border-radius: 0;
+}

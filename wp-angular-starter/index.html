@@ -28,7 +28,8 @@
 </head>
 
 <body ng-app="wp-angular-starter" ng-cloak class="ng-cloak" ui-router-styles>
-<nav style="z-index: 2;" class="navbar navbar-default navbar-fixed-top">
+<notifications-bar class="notifications" closeIcon="fa fa-times-circle" style="z-index:10;"></notifications-bar>
+<nav class="navbar navbar-default navbar-fixed-top" style="z-index:9;">
     <div class="container-fluid">
         <div class="navbar-header" style="margin-top:-1%;">
             <button style="border:none;" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -52,9 +53,9 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a ui-sref="profile"><i class="fa fa-pencil-square-o"></i> Профил</a></li>
                         <li><a ui-sref="inbox"><i class="fa fa-inbox"></i> Примени пораки</a></li>
                         <li><a ui-sref="outbox"><i class="fa fa-paper-plane"></i> Испратени пораки</a></li>
+                        <li><a ui-sref="profile"><i class="fa fa-user"></i> Профил</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="javascript:void(0);" data-ng-click="logout();"><span class="fa fa-sign-out"></span>
                             Одјави се</a></li>
@@ -67,8 +68,8 @@
         </div>
     </div>
 </nav>
-<notifications-bar style="z-index:10;" class="notifications"
-                   closeIcon="fa fa-times-circle"></notifications-bar>
+
+
 <div ui-view style="height: 100%;"></div>
 <!-- Concatenated libraries -->
 <script src="../dest/lib.js?rev=a5da2868abe1e39d913df6898f9cd0b7"></script>
@@ -77,10 +78,8 @@
 <!-- All html templates -->
 <script src="../dest/templates.js?rev=c2a0678a5a41bd18186325b716b36b88"></script>
 
+<script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDMyT0hlU4u9mJGaokKUHEDqnkHdt369eA&v=3.exp">
 </script>
-
-<script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
-<script src=""></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ WPAngularStarter.controller("ReceivedMessageController", ["$scope", "UserService
     $scope.title = "Примени пораки";
 
     $scope.getInbox = function (){
-        UserService.inbox($scope.userId).then(function (response) {
+        UserService.inbox($scope.userId).then(function (response){
             $scope.messages = response.data;
         }, function (){
             console.log("error fetching your inbox!!");

@@ -1,0 +1,500 @@
+2016-03-16 14:26:49,987 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-03-16 14:26:50,118 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed Mar 16 14:26:50 CET 2016]; root of context hierarchy
+2016-03-16 14:26:50,189 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-03-16 14:26:50,660 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-03-16 14:26:51,209 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-03-16 14:26:51,238 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-03-16 14:26:51,625 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-03-16 14:26:51,704 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-03-16 14:26:52,122 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-03-16 14:26:52,127 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-03-16 14:26:52,130 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-03-16 14:26:52,632 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-03-16 14:26:53,299 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-03-16 14:26:53,781 WARN [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:487] Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [spring/persistence-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_51]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_51]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:120) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:860) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Could not determine type for: mk.ukim.finki.wp.model.GoogleMap, at table: listings, for columns: [org.hibernate.mapping.Column(map)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:349) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:322) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:241) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:496) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1360) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1851) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	... 29 common frames omitted
+2016-03-16 14:26:54,005 ERROR [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:331] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [spring/persistence-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434) ~[spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) ~[spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_51]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_51]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:120) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:860) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Could not determine type for: mk.ukim.finki.wp.model.GoogleMap, at table: listings, for columns: [org.hibernate.mapping.Column(map)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:349) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:322) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:241) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:496) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1360) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1851) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	... 29 common frames omitted
+2016-03-16 14:34:23,982 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-03-16 14:34:24,177 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed Mar 16 14:34:24 CET 2016]; root of context hierarchy
+2016-03-16 14:34:24,272 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-03-16 14:34:25,006 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-03-16 14:34:25,541 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-03-16 14:34:25,567 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-03-16 14:34:26,010 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-03-16 14:34:26,079 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-03-16 14:34:26,355 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-03-16 14:34:26,359 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-03-16 14:34:26,362 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-03-16 14:34:26,703 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-03-16 14:34:27,387 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-03-16 14:34:27,694 WARN [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:487] Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [spring/persistence-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_51]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_51]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:120) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:860) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Could not determine type for: mk.ukim.finki.wp.model.GoogleMap, at table: listings, for columns: [org.hibernate.mapping.Column(map)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:349) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:322) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:241) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:496) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1360) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1851) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	... 29 common frames omitted
+2016-03-16 14:34:27,696 ERROR [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:331] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [spring/persistence-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434) ~[spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) ~[spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_51]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_51]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:120) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:860) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Could not determine type for: mk.ukim.finki.wp.model.GoogleMap, at table: listings, for columns: [org.hibernate.mapping.Column(map)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:349) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:322) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:241) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:496) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1360) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1851) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	... 29 common frames omitted
+2016-03-16 14:37:28,439 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-03-16 14:37:28,555 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed Mar 16 14:37:28 CET 2016]; root of context hierarchy
+2016-03-16 14:37:28,600 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-03-16 14:37:28,861 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-03-16 14:37:29,356 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-03-16 14:37:29,389 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-03-16 14:37:29,666 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-03-16 14:37:29,699 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-03-16 14:37:30,023 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-03-16 14:37:30,026 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-03-16 14:37:30,030 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-03-16 14:37:30,390 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-03-16 14:37:31,686 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-03-16 14:37:32,127 WARN [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:487] Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [spring/persistence-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_51]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_51]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:120) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:860) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Could not determine type for: mk.ukim.finki.wp.model.GoogleMap, at table: listings, for columns: [org.hibernate.mapping.Column(map)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:349) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:322) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:241) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:496) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1360) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1851) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	... 29 common frames omitted
+2016-03-16 14:37:32,130 ERROR [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:331] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [spring/persistence-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434) ~[spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) ~[spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_51]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_51]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:120) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:860) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Could not determine type for: mk.ukim.finki.wp.model.GoogleMap, at table: listings, for columns: [org.hibernate.mapping.Column(map)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:349) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:322) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:241) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:496) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1360) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1851) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	... 29 common frames omitted
+2016-03-16 14:38:40,394 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-03-16 14:38:40,578 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed Mar 16 14:38:40 CET 2016]; root of context hierarchy
+2016-03-16 14:38:40,668 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-03-16 14:38:41,180 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-03-16 14:38:41,895 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-03-16 14:38:41,950 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-03-16 14:38:42,398 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-03-16 14:38:42,450 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-03-16 14:38:42,836 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-03-16 14:38:42,843 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-03-16 14:38:42,849 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-03-16 14:38:43,422 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-03-16 14:38:44,404 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-03-16 14:38:44,792 WARN [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:487] Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [spring/persistence-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_51]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_51]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:120) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:860) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Could not determine type for: mk.ukim.finki.wp.model.GoogleMap, at table: listings, for columns: [org.hibernate.mapping.Column(map)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:349) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:322) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:241) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:496) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1360) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1851) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	... 29 common frames omitted
+2016-03-16 14:38:44,799 ERROR [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:331] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [spring/persistence-config.xml]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1574) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434) ~[spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306) ~[spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106) [spring-web-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_51]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_51]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_51]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: wp] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:1249) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.access$600(EntityManagerFactoryBuilderImpl.java:120) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:860) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:425) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:849) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:343) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318) ~[spring-orm-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1633) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Could not determine type for: mk.ukim.finki.wp.model.GoogleMap, at table: listings, for columns: [org.hibernate.mapping.Column(map)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:349) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:322) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:241) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:496) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.validate(Configuration.java:1360) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1851) ~[hibernate-core-4.3.10.Final.jar:4.3.10.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:857) ~[hibernate-entitymanager-4.3.10.Final.jar:4.3.10.Final]
+	... 29 common frames omitted
+2016-03-16 14:40:43,054 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-03-16 14:40:43,196 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed Mar 16 14:40:43 CET 2016]; root of context hierarchy
+2016-03-16 14:40:43,265 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-03-16 14:40:43,807 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/persistence-config.xml]
+2016-03-16 14:40:44,235 INFO [localhost-startStop-1] o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from class path resource [spring/data-access.properties]
+2016-03-16 14:40:44,263 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-03-16 14:40:44,561 INFO [localhost-startStop-1] o.s.o.j.LocalContainerEntityManagerFactoryBean [LocalContainerEntityManagerFactoryBean.java:339] Building JPA container EntityManagerFactory for persistence unit 'wp'
+2016-03-16 14:40:44,596 INFO [localhost-startStop-1] o.h.j.i.u.LogHelper [LogHelper.java:46] HHH000204: Processing PersistenceUnitInfo [
+	name: wp
+	...]
+2016-03-16 14:40:44,862 INFO [localhost-startStop-1] o.h.Version [Version.java:54] HHH000412: Hibernate Core {4.3.10.Final}
+2016-03-16 14:40:44,868 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:239] HHH000206: hibernate.properties not found
+2016-03-16 14:40:44,872 INFO [localhost-startStop-1] o.h.c.Environment [Environment.java:346] HHH000021: Bytecode provider name : javassist
+2016-03-16 14:40:45,276 INFO [localhost-startStop-1] o.h.a.c.Version [JavaReflectionManager.java:66] HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-03-16 14:40:46,128 INFO [localhost-startStop-1] o.h.d.Dialect [Dialect.java:145] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-03-16 14:40:46,532 INFO [localhost-startStop-1] o.h.h.i.a.ASTQueryTranslatorFactory [ASTQueryTranslatorFactory.java:47] HHH000397: Using ASTQueryTranslatorFactory
+2016-03-16 14:40:46,678 INFO [localhost-startStop-1] o.h.v.i.u.Version [Version.java:27] HV000001: Hibernate Validator 5.1.3.Final
+2016-03-16 14:40:47,835 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:207] HHH000228: Running hbm2ddl schema update
+2016-03-16 14:40:47,836 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:218] HHH000102: Fetching database metadata
+2016-03-16 14:40:47,841 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:230] HHH000396: Updating schema
+2016-03-16 14:40:47,917 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.image_urls
+2016-03-16 14:40:47,917 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [image_url, id]
+2016-03-16 14:40:47,918 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_l7bw52eg0668q96j2tghmhn2j]
+2016-03-16 14:40:47,919 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_8ddf373eeg8y6vmptpj9u3ifq]
+2016-03-16 14:40:48,019 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.listings
+2016-03-16 14:40:48,020 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [user_id, id, title, createdon, content]
+2016-03-16 14:40:48,021 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: [fk_qv926x4jhroce71534nmady6a]
+2016-03-16 14:40:48,021 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [fk_qv926x4jhroce71534nmady6a, primary]
+2016-03-16 14:40:48,024 INFO [localhost-startStop-1] j.s.DatabaseMetaData [DatabaseMetadata.java:147] HHH000262: Table not found: map
+2016-03-16 14:40:48,122 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.messages
+2016-03-16 14:40:48,122 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [senton, id, content]
+2016-03-16 14:40:48,123 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-03-16 14:40:48,123 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [primary]
+2016-03-16 14:40:48,185 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:65] HHH000261: Table found: wp_project.users
+2016-03-16 14:40:48,185 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:66] HHH000037: Columns: [password, birthdate, isadmin, surname, imageurl, name, uploadpath, id, email, username]
+2016-03-16 14:40:48,186 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:68] HHH000108: Foreign keys: []
+2016-03-16 14:40:48,186 INFO [localhost-startStop-1] o.h.t.h.TableMetadata [TableMetadata.java:69] HHH000126: Indexes: [uk_r43af9ap4edm43mmtq01oddj6, primary]
+2016-03-16 14:40:48,189 INFO [localhost-startStop-1] j.s.DatabaseMetaData [DatabaseMetadata.java:147] HHH000262: Table not found: map
+2016-03-16 14:40:48,191 INFO [localhost-startStop-1] j.s.DatabaseMetaData [DatabaseMetadata.java:147] HHH000262: Table not found: map
+2016-03-16 14:40:50,396 INFO [localhost-startStop-1] o.h.t.h.SchemaUpdate [SchemaUpdate.java:267] HHH000232: Schema update complete
+2016-03-16 14:40:51,032 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 7967 ms
+2016-03-16 14:40:51,081 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:485] FrameworkServlet 'dispatcherServlet': initialization started
+2016-03-16 14:40:51,087 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Mar 16 14:40:51 CET 2016]; parent: Root WebApplicationContext
+2016-03-16 14:40:51,088 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-core-config.xml]
+2016-03-16 14:40:51,188 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-view-config.xml]
+2016-03-16 14:40:51,418 INFO [localhost-startStop-1] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-03-16 14:40:51,750 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.index(javax.servlet.http.HttpServletRequest)
+2016-03-16 14:40:51,751 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.afterSubmit(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile)
+2016-03-16 14:40:51,751 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.login()
+2016-03-16 14:40:51,752 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/listing],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.HomeController.createListing(java.lang.String,java.lang.String,java.util.ArrayList<org.springframework.web.multipart.MultipartFile>,java.lang.Long,java.lang.Long,javax.servlet.http.HttpSession)
+2016-03-16 14:40:51,755 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListings()
+2016-03-16 14:40:51,755 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing/new],methods=[POST],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.ListingResource.createListing(java.lang.String,java.lang.String,java.util.ArrayList<org.springframework.web.multipart.MultipartFile>,java.lang.Long,java.lang.Long,javax.servlet.http.HttpSession)
+2016-03-16 14:40:51,756 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/listing/user/{id}],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Listing> mk.ukim.finki.wp.web.ListingResource.getAllListingsByUser(java.lang.Long)
+2016-03-16 14:40:51,758 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/remove/{id}],methods=[DELETE],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.UserResource.removeUser(java.lang.Long)
+2016-03-16 14:40:51,758 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/update/{id}],methods=[POST],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.UserResource.updateUser(java.lang.Long,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2016-03-16 14:40:51,759 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/admin],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllAdmins()
+2016-03-16 14:40:51,759 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user/{id}],methods=[GET],produces=[application/json]}" onto public mk.ukim.finki.wp.model.User mk.ukim.finki.wp.web.UserResource.getUser(java.lang.Long)
+2016-03-16 14:40:51,760 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/user],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.User> mk.ukim.finki.wp.web.UserResource.getAllUsers()
+2016-03-16 14:40:52,200 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Mar 16 14:40:51 CET 2016]; parent: Root WebApplicationContext
+2016-03-16 14:40:52,255 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Mar 16 14:40:51 CET 2016]; parent: Root WebApplicationContext
+2016-03-16 14:40:52,357 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2016-03-16 14:40:52,750 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:301] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2016-03-16 14:40:52,757 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2016-03-16 14:40:52,809 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:504] FrameworkServlet 'dispatcherServlet': initialization completed in 1728 ms

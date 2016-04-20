@@ -30,19 +30,19 @@ WPAngularStarter.controller('loginController', ['$scope', 'notifications', '$sta
                     $rootScope.isLoggedIn = true;
                     $rootScope.isAdmin = data.isAdmin;
                     $rootScope.userName = data.username;
-                    notifications.showSuccess({message: 'Успешно се најавивте!'});
+                    notifications.showSuccess(data.username + ', добредојде назад!');
                     if (data.isAdmin == true)
                         window.location.href = adminURL;
                     else{
                         $state.go("home");
                     }
                 }else{
-                    notifications.showError({message: 'Настана грешка. Не успеавме да ве најавиме.'});
+                    notifications.showError('Настана грешка. Не успеавме да ве најавиме.');
                     $('#err-message').addClass('show');
                 }
 
             }).error(function(){
-                notifications.showError({message: 'Настана грешка. Не успеавме да ве најавиме.'});
+                notifications.showError('Настана грешка. Не успеавме да ве најавиме.');
 
             });
 

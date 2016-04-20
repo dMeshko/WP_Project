@@ -38,14 +38,12 @@ WPAngularStarter.factory('ListingService', ['$http', 'apiURL', function ($http, 
                 method: 'GET'
             });
         },
-
         queryByUserId: function(userId){
             return $http({
                 url: apiURL + '/listing/user/' + userId,
                 method: 'GET'
             });
         },
-
         delete: function (id) {
             return $http({
                 url: apiURL + '/listing/' + id,

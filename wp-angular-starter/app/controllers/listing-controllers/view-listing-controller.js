@@ -2,7 +2,7 @@
  * Created by Mile on 03/13/2016.
  */
 
-WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $state, UserService, ListingService, $stateParams, serverURL, NgMap, notifications) {
+WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $state, UserService, ListingService, $stateParams, serverURL, notifications, NgMap) {
     $scope.serverURL = serverURL;
     $scope.showReport = false;
     $scope.showMessage = false;
@@ -57,18 +57,20 @@ WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $st
 
     $scope.reportPost = function () {
         ListingService.reportPost($scope.report).then(function () {
-            notifications.showWarning({message: 'Огласот е пријавен и истиот ќе биде разгледан од администраторите. Ви благодариме.'});
+            notifications.showWarning('Огласот е пријавен и истиот ќе биде разгледан од администраторите. Ви благодариме.');
         }, function () {
-            notifications.showError({message: 'Настана грешка. Огласот не е пријавен.'});
+            notifications.showError('Настана грешка. Огласот не е пријавен.');
+            console.log("error reporting the post!!");
         });
         $scope.toggleReportModal();
     };
 
     $scope.sendMessage = function () {
         UserService.sendMessage($scope.message).then(function () {
-            notifications.showSuccess({message: 'Пораката е пратена!'});
+            notifications.showSuccess('Пораката до <strong>' + $scope.message.userToId + '</strong> е успешно испратена.');
         }, function () {
-            notifications.showSuccess({message: 'Настана грешка. Пораката не е пратена.'});
+            notifications.showError('Настана грешка. Пораката не е испратена.');
+            console.log("error sending the message!!")
         });
         $scope.toggleMessageModal();
     };
@@ -90,10 +92,8 @@ WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $st
 
         setTimeout(function () {
             ListingService.delete($scope.listing.id).then(function () {
-                notifications.showSuccess({message: 'Огласот е успешно избришан!'});
                 $state.go('view-listings');
-            }, function(){
-                notifications.showError({message: 'Настана грешка. Огласот не е избришан.'});
+                notifications.showWarning('Огласот е избришан.')
             })
         }, 300);
     };

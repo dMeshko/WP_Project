@@ -1,8 +1,8 @@
 /**
  * Created by Dell on 16-Mar-16.
  */
-
 WPAngularStarter.controller('signupController', ['$scope', '$state', 'notifications', 'UserService', function ($scope, $state, notifications, UserService) {
+
     $scope.name = '';
     $scope.surname = '';
     $scope.birthDate = '';
@@ -20,9 +20,13 @@ WPAngularStarter.controller('signupController', ['$scope', '$state', 'notificati
     $scope.yearData = getYears();
 
     $scope.save = function () {
+
         convertMonth();
         $scope.birthDate = calculateDate();
+
         if (($scope.name != '') && ($scope.surname != '') && ($scope.username != '') && ($scope.email != '') && ($scope.password != '') && ($scope.signup_form.email.$valid) && ($scope.password == $scope.confirm)) {
+
+
             var data = $.param({
                 "name": $scope.name,
                 "surname": $scope.surname,
@@ -33,6 +37,7 @@ WPAngularStarter.controller('signupController', ['$scope', '$state', 'notificati
 
             });
 
+
             var config = {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -41,32 +46,42 @@ WPAngularStarter.controller('signupController', ['$scope', '$state', 'notificati
 
 
             UserService.saveUser(data, config).success(function (data) {
-                notifications.showSuccess({message: $scope.username + ', добредојде на Цимерско лоби!'});
+
+                notifications.showSuccess($scope.username + ', добредојде во фамилијата цимери!');
+
                 $scope.name = '';
                 $scope.surname = '';
                 $scope.birthDate = '';
                 $scope.email = '';
                 $scope.username = '';
                 $scope.password = '';
+
                 $scope.confirm = '';
                 $scope.day = '';
                 $scope.month = '';
                 $scope.year = '';
+
                 $state.go('home');
+
+
             }).error(function (data) {
                 console.log(data);
-                notifications.showError({message: 'Настана грешка. Не успеавме да ве регистрираме.'});
+                notifications.showError('Настана грешка. Не успеавме да го креираме профилот.');
+
             });
         }
+
     };
 
     $scope.cancel = function () {
+
         $scope.name = '';
         $scope.surname = '';
         $scope.birthDate = '';
         $scope.email = '';
         $scope.username = '';
         $scope.password = '';
+
         $scope.confirm = '';
         $scope.day = '';
         $scope.month = '';
@@ -137,5 +152,6 @@ WPAngularStarter.controller('signupController', ['$scope', '$state', 'notificati
             default:
                 break;
         }
+
     }
 }]);

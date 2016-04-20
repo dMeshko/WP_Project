@@ -1,6 +1,6 @@
 .navbar-default {
-    background: #fde37d;
-    border-color:#333;
+    background-color: #fde37d;
+    border-color: #333333;
     opacity:0.9;
 }
 .navbar-default .navbar-brand {
@@ -14,7 +14,7 @@
     color: #333333;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #333;
+    color: #333333;
     font-size:14px;
 }
 .navbar-default .navbar-nav > li > a:hover,
@@ -48,12 +48,11 @@
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color:#333;
+    border-color: #333333;
 }
 .navbar-default .navbar-link {
     color: #333333;
 }
-
 .navbar-default .navbar-link:hover {
     color: #fdfdfd;
 }
