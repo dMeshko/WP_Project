@@ -6,15 +6,15 @@ WPAngularStarter.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('create-listing', {
             url: '/listing',
-            templateUrl: '/views/listing.html',
+            templateUrl: '/views/listing/listing.html',
             controller: 'ListingController',
             data: {
-                css:'css/jquery.fileupload.css'
+                css: 'css/jquery.fileupload.css'
             }
         })
         .state('view-listings', {
             url: '/listings/{keyword}',
-            templateUrl: '/views/view-listings.html',
+            templateUrl: '/views/listing/view-listings.html',
             controller: 'ViewListingsController',
             data: {
                 css: 'css/listing.css'
@@ -22,7 +22,7 @@ WPAngularStarter.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('search-listings', {
             url: '/search/{keyword}',
-            templateUrl: '/views/view-listings.html',
+            templateUrl: '/views/listing/view-listings.html',
             controller: 'SearchListingsController',
             data: {
                 css: 'css/listing.css'
@@ -30,7 +30,7 @@ WPAngularStarter.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('view-listing', {
             url: '/listing/{id}',
-            templateUrl: 'views/view-listing.html',
+            templateUrl: 'views/listing/view-listing.html',
             controller: 'ViewListingController',
             data: {
                 css: 'css/view-listing.css'
@@ -38,10 +38,10 @@ WPAngularStarter.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('edit-listing', {
             url: '/edit',
-            templateUrl: 'views/edit-listing.html',
+            templateUrl: 'views/listing/edit-listing.html',
             controller: 'EditListingController',
             params: {
-                listing : 'null'
+                listing: 'null'
             },
             data: {
                 css: 'css/view-listing.css'
@@ -49,7 +49,7 @@ WPAngularStarter.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('sign-up', {
             url: '/signup',
-            templateUrl: 'views/signup.html',
+            templateUrl: 'views/user/signup.html',
             controller: 'signupController',
             data: {
                 css: 'css/signup.css'
@@ -65,25 +65,33 @@ WPAngularStarter.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('log-in', {
             url: '/login',
-            templateUrl: 'views/login.html',
+            templateUrl: 'views/user/login.html',
             controller: 'loginController',
             data: {
                 css: 'css/login.css'
             }
         })
+        .state('profile', {
+            url: '/profile',
+            templateUrl: 'views/user/user-profile.html',
+            controller: 'userProfileController',
+            data: {
+                css: 'css/listing.css'
+            }
+        })
         .state("inbox", {
             url: "/messages/inbox",
-            templateUrl: "views/messages.html",
+            templateUrl: "views/user/messages.html",
             controller: "ReceivedMessageController"
         })
         .state("outbox", {
             url: "/messages/outbox",
-            templateUrl: "views/messages.html",
+            templateUrl: "views/user/messages.html",
             controller: "SentMessageController"
         })
         .state("readMessage", {
             url: "/messages/read/{id}",
-            templateUrl: "views/messageDetails.html",
+            templateUrl: "views/user/messageDetails.html",
             controller: "ViewMessageController"
         });
 });

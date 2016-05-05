@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -18,7 +19,7 @@ public class Location extends BaseEntity{
     private String lat;
     private String lng;
 
-    @ManyToOne
+    @OneToOne
     private Listing listing;
 
     public Location() {}

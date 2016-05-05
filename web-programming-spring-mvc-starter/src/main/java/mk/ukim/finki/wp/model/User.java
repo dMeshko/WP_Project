@@ -48,14 +48,6 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "userFrom", fetch = FetchType.EAGER)
     private List<Message> receivedMessages;
 
-    public String getUploadPath() {
-        return uploadPath;
-    }
-
-    public void setUploadPath(String uploadPath) {
-        this.uploadPath = uploadPath;
-    }
-
     private String uploadPath;
 
     private Boolean isAdmin;
@@ -117,6 +109,10 @@ public class User extends BaseEntity {
         return sentMessages;
     }
 
+    public String getUploadPath() {
+        return uploadPath;
+    }
+
     //setters
     public void setName(String name) {
         this.name = name;
@@ -156,5 +152,9 @@ public class User extends BaseEntity {
 
     public void setSentMessages(List<Message> sentMessages) {
         this.sentMessages = sentMessages;
+    }
+
+    public void setUploadPath(String uploadPath) {
+        this.uploadPath = uploadPath;
     }
 }

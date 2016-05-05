@@ -40,9 +40,11 @@ public class ListingService implements IListingService {
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Listing listing = new Listing(title, content, simpleDateFormat.format(createdOn), imageURLs, user);
-        listingRepository.saveOrUpdate(listing);
+        listingRepository.saveOrUpdate(listing); //this is overhead, but since I don't have time to fix it, it will serve it's purpose..the listing should be persisted once!!!
         Location location = new Location(locationName, lat, lng, listing);
         listingRepository.saveOrUpdateLocation(location);
+        listing.setLocation(location);
+        listingRepository.saveOrUpdate(listing);
         return listing;
     }
 
@@ -178,6 +180,16 @@ public class ListingService implements IListingService {
     @Override
     public Report getReportById(Long id) {
         return listingRepository.getReportById(id);
+    }
+
+    @Override
+    public List<Listing> nearbyListingsSearchByLocation(String currentLat, String currentLng, String maxDistance) {
+        return listingRepository.nearbyListingsSearchByLocation(currentLat, currentLng, maxDistance);
+    }
+
+    @Override
+    public List<Listing> getPiece(int offset, int end) {
+        return listingRepository.getPiece(offset, end);
     }
 
     public List<Listing> getAllListingsByUser(Long userId) {

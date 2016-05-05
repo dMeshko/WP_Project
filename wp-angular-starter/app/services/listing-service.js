@@ -46,7 +46,11 @@ WPAngularStarter.factory('ListingService', ['$http', 'apiURL', function ($http, 
             });
         },
 
-        reportPost: function (report) {
+        queryByUserId: function (userId){
+            return $http.get(apiURL + "/listing/user/" + userId);
+        },
+
+            reportPost: function (report) {
             var data = $.param({
                 "content": report.content,
                 "userId": report.userFromId,

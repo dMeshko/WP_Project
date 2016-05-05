@@ -2,7 +2,7 @@
  * Created by Dell on 16-Mar-16.
  */
 
-WPAngularStarter.controller('loginController', ['$scope', 'toastr', '$state', 'UserService', "$rootScope", "adminURL", function($scope, toastr, $state, UserService, $rootScope, adminURL){
+WPAngularStarter.controller('loginController', ['$scope', 'notifications',  '$state', 'UserService', "$rootScope", "adminURL", function($scope, notifications,  $state, UserService, $rootScope, adminURL){
 
     $scope.username = '';
     $scope.password = '';
@@ -30,19 +30,17 @@ WPAngularStarter.controller('loginController', ['$scope', 'toastr', '$state', 'U
                     $rootScope.isLoggedIn = true;
                     $rootScope.isAdmin = data.isAdmin;
                     $rootScope.userName = data.username;
-                    toastr.success("successful logging in");
                     if (data.isAdmin == true)
                         window.location.href = adminURL;
                     else{
                         $state.go("home");
                     }
                 }else{
-                    toastr.error("error logging in");
+                    notifications.showSuccess({message: 'Your task posted successfully'});
                     $('#err-message').addClass('show');
                 }
 
             }).error(function(){
-                toastr.error("error logging in");
 
             });
 

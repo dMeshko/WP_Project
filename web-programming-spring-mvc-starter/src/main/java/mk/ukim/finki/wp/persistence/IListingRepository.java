@@ -24,4 +24,6 @@ public interface IListingRepository {
     public void saveOrUpdateReport(Report report);
     public Report getReportById(Long id);
     public Location saveOrUpdateLocation(Location location);
+    public List<Listing> nearbyListingsSearchByLocation(String currentLat, String currentLng, String maxDistance);
+    public List<Listing> getPiece(int offset, int end);
 }

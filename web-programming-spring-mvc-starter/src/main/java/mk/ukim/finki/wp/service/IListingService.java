@@ -27,4 +27,6 @@ public interface IListingService {
     public void saveReport(String content, User userFrom, Listing listing);
     public void updateReport(Long id, Boolean seen);
     public Report getReportById(Long id);
+    public List<Listing> nearbyListingsSearchByLocation(String currentLat, String currentLng, String maxDistance);
+    public List<Listing> getPiece(int offset, int end);
 }

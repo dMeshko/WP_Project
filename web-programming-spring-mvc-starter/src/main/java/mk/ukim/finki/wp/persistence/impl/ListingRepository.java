@@ -100,4 +100,14 @@ public class ListingRepository implements IListingRepository {
     public Location saveOrUpdateLocation(Location location) {
         return baseRepository.saveOrUpdate(location);
     }
+
+    @Override
+    public List<Listing> nearbyListingsSearchByLocation(String currentLat, String currentLng, String maxDistance) {
+        return baseRepository.nearbyListingsSearchByLocation(currentLat, currentLng, maxDistance);
+    }
+
+    @Override
+    public List<Listing> getPiece(int offset, int end) {
+        return baseRepository.getPiece(Listing.class, null, offset, end);
+    }
 }

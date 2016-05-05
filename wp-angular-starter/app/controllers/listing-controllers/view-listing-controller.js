@@ -33,7 +33,7 @@ WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $st
 
         //the map
         NgMap.getMap().then(function(map) {
-            var location = {lat: parseFloat(response.data.locations[0].lat), lng: parseFloat(response.data.locations[0].lng)};
+            var location = {lat: parseFloat(response.data.location.lat), lng: parseFloat(response.data.location.lng)};
             map.setCenter(location);
             map.setZoom(15);
 

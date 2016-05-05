@@ -30,7 +30,8 @@ var CSS_LIB = [
     'bower_components/angular-bootstrap-colorpicker/css/colorpicker.css',
     'bower_components/angular-xeditable/dist/css/xeditable.css',
     'bower_components/c3/c3.min.css',
-    'bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css'
+    'bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css',
+    'bower_components/ng-notifications-bar/css/ngNotificationsBar.css'
 ];
 
 var CSS_APP = [
@@ -81,7 +82,8 @@ var JS_LIB = [
     'bower_components/tinymce-dist/tinymce.min.js',
     'bower_components/angular-ui-tinymce/dist/tinymce.min.js',
     'bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js',
-    'bower_components/ngmap/build/scripts/ng-map.min.js'
+    'bower_components/ngmap/build/scripts/ng-map.min.js',
+    'bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.js'
 ];
 
 var JS_APP = [

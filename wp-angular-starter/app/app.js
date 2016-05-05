@@ -13,23 +13,28 @@ var WPAngularStarter = angular.module('wp-angular-starter', [
     'angularUtils.directives.dirPagination',
     'ui.tinymce',
     'google.places',
-    'ngMap']);
+    'ngMap',
+    'ngNotificationsBar']);
 
 WPAngularStarter.constant("serverURL", "http://localhost:8080/servlet-showcase");
 WPAngularStarter.constant("apiURL", "http://localhost:8080/servlet-showcase/api");
 WPAngularStarter.constant("siteURL", "http://localhost:8000/#");
 WPAngularStarter.constant("adminURL", "http://localhost:8000/admin");
 
-WPAngularStarter.config(function (paginationTemplateProvider){
+WPAngularStarter.config(function (paginationTemplateProvider, notificationsConfigProvider) {
+    // for paginationTemplateProvider
     paginationTemplateProvider.setPath('../bower_components/angular-utils-pagination/dirPagination.tpl.html');
+    //for notificationsConfigProvider
+    notificationsConfigProvider.setAutoHide(true);
+    notificationsConfigProvider.setHideDelay(2500);
 });
 
-WPAngularStarter.run(function ($rootScope, $state, adminURL){
+WPAngularStarter.run(function ($rootScope, $state, adminURL) {
     $rootScope.isLoggedIn = false;
     $rootScope.isAdmin = false;
     $rootScope.userId = -1;
 
-    $rootScope.createCookie = function(name, value, days) {
+    $rootScope.createCookie = function (name, value, days) {
         var expires;
 
         if (days) {
@@ -42,7 +47,7 @@ WPAngularStarter.run(function ($rootScope, $state, adminURL){
         document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
     };
 
-    $rootScope.readCookie = function(name) {
+    $rootScope.readCookie = function (name) {
         var nameEQ = encodeURIComponent(name) + "=";
         var ca = document.cookie.split(';');
         for (var i = 0; i < ca.length; i++) {
@@ -53,11 +58,11 @@ WPAngularStarter.run(function ($rootScope, $state, adminURL){
         return null;
     };
 
-    $rootScope.eraseCookie = function(name) {
+    $rootScope.eraseCookie = function (name) {
         $rootScope.createCookie(name, "", -1);
     };
 
-    $rootScope.logout = function (){
+    $rootScope.logout = function () {
         $rootScope.eraseCookie("userId");
         $rootScope.eraseCookie("userIsAdmin");
         $rootScope.eraseCookie("userName");
@@ -67,12 +72,12 @@ WPAngularStarter.run(function ($rootScope, $state, adminURL){
         $state.go("home");
     };
 
-    $rootScope.adminPanel = function (){
+    $rootScope.adminPanel = function () {
         window.location.href = adminURL;
     };
 
-    $(document).ready(function (){
-        if ($rootScope.userId = $rootScope.readCookie("userId")){
+    $(document).ready(function () {
+        if ($rootScope.userId = $rootScope.readCookie("userId")) {
             $rootScope.isLoggedIn = true;
             $rootScope.isAdmin = $rootScope.readCookie("userIsAdmin");
             $rootScope.userName = $rootScope.readCookie("userName");
@@ -81,12 +86,12 @@ WPAngularStarter.run(function ($rootScope, $state, adminURL){
     });
 
     $rootScope.tinymceOptions = {
-        onChange: function(e) {
+        onChange: function (e) {
             // put logic here for keypress and cut/paste changes
         },
         inline: false,
-        plugins : 'advlist autolink link lists charmap print preview',
+        plugins: 'advlist autolink link lists charmap print preview',
         skin: 'lightgray',
-        theme : 'modern'
+        theme: 'modern'
     };
 });

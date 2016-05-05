@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 import java.util.List;
@@ -106,5 +107,32 @@ public class BaseRepository {
         // dateFormat dd/MM/yyyy
         TypedQuery<Listing> q = em.createQuery("SELECT l FROM Listing l WHERE l.createdOn LIKE '" + date + "')", Listing.class);
         return q.getResultList();
+    }
+
+    public List<Listing> nearbyListingsSearchByLocation(String currentLat, String currentLng, String maxDistance){
+        /*
+        SELECT *, ( 3959 * acos( cos( radians(41.9991856) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(21.390435799999977) ) + sin( radians(41.9991856) ) * sin( radians( lat ) ) ) ) * 1.609344 AS distance FROM listing_location HAVING distance < 2 ORDER BY distance
+         */
+        //this can be optimized with native query, lit a bit of effort but does the job just fine for now! :)
+        String straightLineDistance = "( 3959 * acos( cos( radians(" + currentLat + ") ) * cos( radians( l.location.lat ) ) * cos( radians( l.location.lng ) - radians(" + currentLng + ") ) + sin( radians(" + currentLat + ") ) * sin( radians( l.location.lat ) ) ) ) * 1.609344";
+        TypedQuery<Listing> q = em.createQuery("SELECT l FROM Listing l WHERE " + maxDistance + " >  " + straightLineDistance + " ORDER BY " + straightLineDistance, Listing.class);
+
+        return q.getResultList();
+    }
+
+    public <T> List<T> getPiece(Class<T> type, PredicateBuilder<T> predicateBuilder, int offset, int end) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<T> cq = cb.createQuery(type);
+        final Root<T> root = cq.from(type);
+
+//    Predicate securityPredicate = getSecurityPredicate(type);
+
+        if (predicateBuilder != null)
+            cq.where(predicateBuilder.toPredicate(cb, cq, root));
+//    else
+//      cq.where(securityPredicate);
+        TypedQuery<T> query = em.createQuery(cq).setFirstResult(offset).setMaxResults(end - offset);
+
+        return query.getResultList();
     }
 }

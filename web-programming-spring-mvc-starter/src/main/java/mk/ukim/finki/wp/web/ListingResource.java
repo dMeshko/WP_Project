@@ -118,4 +118,15 @@ public class ListingResource {
         listing.setContent(content);
         listingService.updateListing(listing);
     }
+
+    @RequestMapping(value = "/search/nearby/{currentLat}/{currentLng}/{maxDistance}", method = RequestMethod.GET)
+    public List<Listing> search(@PathVariable String currentLat, @PathVariable String currentLng, @PathVariable String maxDistance) {
+        List<Listing> listings = listingService.nearbyListingsSearchByLocation(currentLat, currentLng, maxDistance);
+        return listings;
+    }
+
+    @RequestMapping(value = "/piece/{offset}/{end}")
+    public List<Listing> getPiece(@PathVariable int offset, @PathVariable int end){
+        return listingService.getPiece(offset, end);
+    }
 }

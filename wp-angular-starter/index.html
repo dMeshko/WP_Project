@@ -16,6 +16,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/overriden-nav.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="bower_components/ng-notifications-bar/css/ngNotificationsBar.min.css">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -27,8 +29,7 @@
 </head>
 
 <body ng-app="wp-angular-starter" ng-cloak class="ng-cloak" ui-router-styles>
-
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav style="z-index: 2;" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header" style="margin-top:-1%;">
             <button style="border:none;" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -39,32 +40,36 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li data-ng-show = "isLoggedIn"><a ui-sref="create-listing">Нов оглас</a></li>
+                <li data-ng-show="isLoggedIn"><a ui-sref="create-listing">Нов оглас</a></li>
                 <li><a ui-sref="view-listings">Огласи</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                {{isAdmin}}
-                <li data-ng-show = "isAdmin"><a href = "javascript:void(0);" data-ng-click="adminPanel();"><span class="fa fa-dashboard"></span> Админ област</a></li>
-                <li data-ng-show = "isLoggedIn">
-                    <a href = "javascript:void(0);" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <li data-ng-show="isAdmin"><a href="javascript:void(0);" data-ng-click="adminPanel();"><span
+                        class="fa fa-dashboard"></span> Админ област</a></li>
+                <li data-ng-show="isLoggedIn">
+                    <a href="javascript:void(0);" class="dropdown-toggle" type="button" id="dropdownMenu1"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <i class="fa fa-user"></i> {{userName}}
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a ui-sref = "inbox"><i class="fa fa-inbox"></i> Примени пораки</a></li>
-                        <li><a ui-sref = "outbox"><i class="fa fa-paper-plane"></i> Испратени пораки</a></li>
+                        <li><a ui-sref="profile"><i class="fa fa-pencil-square-o"></i> Профил</a></li>
+                        <li><a ui-sref="inbox"><i class="fa fa-inbox"></i> Примени пораки</a></li>
+                        <li><a ui-sref="outbox"><i class="fa fa-paper-plane"></i> Испратени пораки</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href = "javascript:void(0);" data-ng-click="logout();"><span class="fa fa-sign-out"></span> Одјави се</a></li>
+                        <li><a href="javascript:void(0);" data-ng-click="logout();"><span class="fa fa-sign-out"></span>
+                            Одјави се</a></li>
                     </ul>
                 </li>
-                <li data-ng-hide = "isLoggedIn"><a ui-sref="log-in"><span class="fa fa-user"></span> Најава</a></li>
-                <li data-ng-hide = "isLoggedIn"><a ui-sref="sign-up"><span class="fa fa-sign-in"></span> Регистрирај ме</a></li>
+                <li data-ng-hide="isLoggedIn"><a ui-sref="log-in"><span class="fa fa-user"></span> Најава</a></li>
+                <li data-ng-hide="isLoggedIn"><a ui-sref="sign-up"><span class="fa fa-sign-in"></span> Регистрирај
+                    ме</a></li>
             </ul>
         </div>
     </div>
 </nav>
-
-
+<notifications-bar style="z-index:10;" class="notifications"
+                   closeIcon="fa fa-times-circle"></notifications-bar>
 <div ui-view style="height: 100%;"></div>
 <!-- Concatenated libraries -->
 <script src="../dest/lib.js?rev=a5da2868abe1e39d913df6898f9cd0b7"></script>
@@ -72,6 +77,9 @@
 <script src="../dest/src.js?rev=ebf7c371237bd9bdd8bb7aef1255d2e5"></script>
 <!-- All html templates -->
 <script src="../dest/templates.js?rev=c2a0678a5a41bd18186325b716b36b88"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDMyT0hlU4u9mJGaokKUHEDqnkHdt369eA&v=3.exp">
+</script>
 
 <script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
 <script src=""></script>

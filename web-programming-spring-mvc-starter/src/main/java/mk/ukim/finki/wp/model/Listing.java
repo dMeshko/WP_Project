@@ -36,8 +36,8 @@ public class Listing extends BaseEntity {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "listing", fetch = FetchType.EAGER)
-    private List<Location> locations;
+    @OneToOne
+    private Location location;
 
     public Listing() {
 
@@ -49,7 +49,7 @@ public class Listing extends BaseEntity {
         this.createdOn = createdOn;
         this.imageURLs = imageURLs;
         this.user = user;
-        locations = new ArrayList<Location>();
+        //locations = new ArrayList<Location>();
     }
 
     public String getTitle() {
@@ -68,8 +68,8 @@ public class Listing extends BaseEntity {
         return imageURLs;
     }
 
-    public List<Location> getLocations(){
-        return locations;
+    public Location getLocation(){
+        return location;
     }
 
     public User getUser() {
@@ -94,5 +94,9 @@ public class Listing extends BaseEntity {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public void setLocation(Location location){
+        this.location = location;
     }
 }
