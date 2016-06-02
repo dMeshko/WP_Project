@@ -3,9 +3,35 @@
  */
 
 WPAngularStarter.factory('UserService', ['$http', 'apiURL', function ($http, apiURL) {
+<<<<<<< HEAD
     return {
         saveUser: function (data, config) {
             return $http.post("http://localhost:8080/servlet-showcase/api/user/signup", data, config);
+=======
+
+    return {
+
+        saveUser: function (data, config) {
+            return $http.post("http://localhost:8080/servlet-showcase/api/user/signup", data, config);
+        },
+        editUser: function (user) {
+            return $http({
+                method: 'POST',
+                url: apiURL + '/user/update/' + user.id,
+                data: $.param({
+                    id: user.id,
+                    name: user.name,
+                    surname: user.surname,
+                    email: user.email,
+                    username: user.username,
+                    password: user.password,
+                    birthDate: user.birthDate
+                }),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            });
+>>>>>>> origin/master
         },
 
         isUnique: function (username) {
@@ -16,6 +42,16 @@ WPAngularStarter.factory('UserService', ['$http', 'apiURL', function ($http, api
             return $http.post("http://localhost:8080/servlet-showcase/api/user/login", data, config);
         },
 
+<<<<<<< HEAD
+=======
+        getUser: function (id) {
+            return $http({
+                method: 'GET',
+                url: apiURL + '/user/' + id
+            });
+        },
+
+>>>>>>> origin/master
         sendMessage: function (message) {
             var data = $.param({
                 "content": message.content,

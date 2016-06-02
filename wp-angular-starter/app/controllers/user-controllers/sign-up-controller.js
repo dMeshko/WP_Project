@@ -1,8 +1,7 @@
 /**
  * Created by Dell on 16-Mar-16.
  */
-
-WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'UserService', function($scope,$state, toastr, UserService){
+WPAngularStarter.controller('signupController', ['$scope', '$state', 'notifications', 'UserService', function ($scope, $state, notifications, UserService) {
 
     $scope.name = '';
     $scope.surname = '';
@@ -13,19 +12,19 @@ WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'U
 
     $scope.confirm = '';
     $scope.day = '';
-    $scope.month='';
-    $scope.year='';
+    $scope.month = '';
+    $scope.year = '';
     $scope.monthT = '';
 
-    $scope.dayData = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+    $scope.dayData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
     $scope.yearData = getYears();
 
-    $scope.save = function(){
+    $scope.save = function () {
 
         convertMonth();
         $scope.birthDate = calculateDate();
 
-        if(($scope.name != '') && ($scope.surname != '') && ($scope.username != '') && ($scope.email != '') && ($scope.password != '') && ($scope.signup_form.email.$valid) && ($scope.password == $scope.confirm)) {
+        if (($scope.name != '') && ($scope.surname != '') && ($scope.username != '') && ($scope.email != '') && ($scope.password != '') && ($scope.signup_form.email.$valid) && ($scope.password == $scope.confirm)) {
 
 
             var data = $.param({
@@ -39,7 +38,6 @@ WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'U
             });
 
 
-
             var config = {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -49,7 +47,7 @@ WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'U
 
             UserService.saveUser(data, config).success(function (data) {
 
-                toastr.success("User saved");
+                notifications.showSuccess($scope.username + ', добредојде во фамилијата цимери!');
 
                 $scope.name = '';
                 $scope.surname = '';
@@ -68,14 +66,14 @@ WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'U
 
             }).error(function (data) {
                 console.log(data);
-                toastr.error("Error creating user");
+                notifications.showError('Настана грешка. Не успеавме да го креираме профилот.');
 
             });
         }
 
     };
 
-    $scope.cancel = function(){
+    $scope.cancel = function () {
 
         $scope.name = '';
         $scope.surname = '';
@@ -85,49 +83,74 @@ WPAngularStarter.controller('signupController', ['$scope','$state', 'toastr', 'U
         $scope.password = '';
 
         $scope.confirm = '';
-        $scope.day='';
-        $scope.month='';
-        $scope.year='';
+        $scope.day = '';
+        $scope.month = '';
+        $scope.year = '';
 
         $state.go("home");
 
     };
 
-    $scope.login = function(){
+    $scope.login = function () {
         $state.go("log-in");
     };
 
 
-    function calculateDate(){
+    function calculateDate() {
         return $scope.day + "/" + $scope.month + "/" + $scope.year;
     }
 
-    function getYears(){
+    function getYears() {
         var arr = [];
 
-        for(i=2016; i>=1955; i--){
+        for (i = 2016; i >= 1955; i--) {
             arr.push(i);
         }
 
         return arr;
     }
 
-    function convertMonth(){
+    function convertMonth() {
 
-        switch($scope.monthT){
-            case 'Јануари': $scope.month = 1; break;
-            case 'Февруари': $scope.month = 2; break;
-            case 'Март': $scope.month = 3; break;
-            case 'Април': $scope.month = 4; break;
-            case 'Мај': $scope.month = 5; break;
-            case 'Јуни': $scope.month = 6; break;
-            case 'Јули': $scope.month = 7; break;
-            case 'Август': $scope.month = 8; break;
-            case 'Септември': $scope.month = 9; break;
-            case 'Октомври': $scope.month = 10; break;
-            case 'Ноември': $scope.month = 11; break;
-            case 'Декември': $scope.month = 12; break;
-            default: break;
+        switch ($scope.monthT) {
+            case 'Јануари':
+                $scope.month = 1;
+                break;
+            case 'Февруари':
+                $scope.month = 2;
+                break;
+            case 'Март':
+                $scope.month = 3;
+                break;
+            case 'Април':
+                $scope.month = 4;
+                break;
+            case 'Мај':
+                $scope.month = 5;
+                break;
+            case 'Јуни':
+                $scope.month = 6;
+                break;
+            case 'Јули':
+                $scope.month = 7;
+                break;
+            case 'Август':
+                $scope.month = 8;
+                break;
+            case 'Септември':
+                $scope.month = 9;
+                break;
+            case 'Октомври':
+                $scope.month = 10;
+                break;
+            case 'Ноември':
+                $scope.month = 11;
+                break;
+            case 'Декември':
+                $scope.month = 12;
+                break;
+            default:
+                break;
         }
 
     }

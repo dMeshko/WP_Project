@@ -2,7 +2,11 @@
  * Created by Dell on 16-Mar-16.
  */
 
+<<<<<<< HEAD
 WPAngularStarter.controller('loginController', ['$scope', 'notifications',  '$state', 'UserService', "$rootScope", "adminURL", function($scope, notifications,  $state, UserService, $rootScope, adminURL){
+=======
+WPAngularStarter.controller('loginController', ['$scope', 'notifications', '$state', 'UserService', "$rootScope", "adminURL", function($scope, notifications, $state, UserService, $rootScope, adminURL){
+>>>>>>> origin/master
 
     $scope.username = '';
     $scope.password = '';
@@ -30,17 +34,29 @@ WPAngularStarter.controller('loginController', ['$scope', 'notifications',  '$st
                     $rootScope.isLoggedIn = true;
                     $rootScope.isAdmin = data.isAdmin;
                     $rootScope.userName = data.username;
+<<<<<<< HEAD
+=======
+                    notifications.showSuccess(data.username + ', добредојде назад!');
+>>>>>>> origin/master
                     if (data.isAdmin == true)
                         window.location.href = adminURL;
                     else{
                         $state.go("home");
                     }
                 }else{
+<<<<<<< HEAD
                     notifications.showSuccess({message: 'Your task posted successfully'});
+=======
+                    notifications.showError('Настана грешка. Не успеавме да ве најавиме.');
+>>>>>>> origin/master
                     $('#err-message').addClass('show');
                 }
 
             }).error(function(){
+<<<<<<< HEAD
+=======
+                notifications.showError('Настана грешка. Не успеавме да ве најавиме.');
+>>>>>>> origin/master
 
             });
 

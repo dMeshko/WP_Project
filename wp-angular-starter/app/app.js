@@ -26,9 +26,22 @@ WPAngularStarter.config(function (paginationTemplateProvider, notificationsConfi
     paginationTemplateProvider.setPath('../bower_components/angular-utils-pagination/dirPagination.tpl.html');
     //for notificationsConfigProvider
     notificationsConfigProvider.setAutoHide(true);
+<<<<<<< HEAD
     notificationsConfigProvider.setHideDelay(2500);
 });
 
+=======
+    notificationsConfigProvider.setHideDelay(3000);
+    notificationsConfigProvider.setAcceptHTML(false);
+    notificationsConfigProvider.setAutoHideAnimation('fadeOutNotifications');
+    notificationsConfigProvider.setAutoHideAnimationDelay(1200);
+});
+
+WPAngularStarter.config(function (paginationTemplateProvider) {
+    paginationTemplateProvider.setPath('../bower_components/angular-utils-pagination/dirPagination.tpl.html');
+});
+
+>>>>>>> origin/master
 WPAngularStarter.run(function ($rootScope, $state, adminURL) {
     $rootScope.isLoggedIn = false;
     $rootScope.isAdmin = false;
@@ -57,11 +70,18 @@ WPAngularStarter.run(function ($rootScope, $state, adminURL) {
         }
         return null;
     };
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     $rootScope.eraseCookie = function (name) {
         $rootScope.createCookie(name, "", -1);
     };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     $rootScope.logout = function () {
         $rootScope.eraseCookie("userId");
         $rootScope.eraseCookie("userIsAdmin");
@@ -71,7 +91,10 @@ WPAngularStarter.run(function ($rootScope, $state, adminURL) {
         $rootScope.userId = null;
         $state.go("home");
     };
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     $rootScope.adminPanel = function () {
         window.location.href = adminURL;
     };
@@ -88,10 +111,28 @@ WPAngularStarter.run(function ($rootScope, $state, adminURL) {
     $rootScope.tinymceOptions = {
         onChange: function (e) {
             // put logic here for keypress and cut/paste changes
-        },
+        }
+        ,
+        inline: false,
+        plugins: 'advlist autolink link lists charmap print preview',
+        skin: 'lightgray',
+<<<<<<< HEAD
+        theme: 'modern'
+    };
+});
+=======
+        theme: 'modern',
+        onChange: function (e) {
+            // put logic here for keypress and cut/paste changes
+        }
+
+        ,
         inline: false,
         plugins: 'advlist autolink link lists charmap print preview',
         skin: 'lightgray',
         theme: 'modern'
-    };
+    }
+    ;
 });
+
+>>>>>>> origin/master

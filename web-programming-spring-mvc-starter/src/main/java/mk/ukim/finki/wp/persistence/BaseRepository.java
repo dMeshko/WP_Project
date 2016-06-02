@@ -7,10 +7,7 @@ import mk.ukim.finki.wp.persistence.helper.PredicateBuilder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import javax.persistence.criteria.*;
 import java.util.List;
 
@@ -131,7 +128,7 @@ public class BaseRepository {
             cq.where(predicateBuilder.toPredicate(cb, cq, root));
 //    else
 //      cq.where(securityPredicate);
-        TypedQuery<T> query = em.createQuery(cq).setFirstResult(offset).setMaxResults(end - offset);
+        TypedQuery<T> query = em.createQuery(cq.orderBy(cb.desc(root.get("id")))).setFirstResult(offset).setMaxResults(end - offset);
 
         return query.getResultList();
     }

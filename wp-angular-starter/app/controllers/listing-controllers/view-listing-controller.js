@@ -2,7 +2,7 @@
  * Created by Mile on 03/13/2016.
  */
 
-WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $state, UserService, ListingService, $stateParams, serverURL, toastr, NgMap) {
+WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $state, UserService, ListingService, $stateParams, serverURL, notifications, NgMap) {
     $scope.serverURL = serverURL;
     $scope.showReport = false;
     $scope.showMessage = false;
@@ -21,7 +21,7 @@ WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $st
     $scope.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDMyT0hlU4u9mJGaokKUHEDqnkHdt369eA&v=3.exp";
 
 
-    ListingService.queryListing($stateParams.id).then(function (response) {
+    ListingService.queryById($stateParams.id).then(function (response) {
         $scope.listing = response.data;
         $scope.listing.content = $sce.trustAsHtml($scope.listing.content);
         $scope.report.listingId = response.data.id;
@@ -57,9 +57,9 @@ WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $st
 
     $scope.reportPost = function () {
         ListingService.reportPost($scope.report).then(function () {
-            toastr.success("Постот е успешно пријавен и истиот ќе биде разгледан од администраторите.  Ви благодариме.");
+            notifications.showWarning('Огласот е пријавен и истиот ќе биде разгледан од администраторите. Ви благодариме.');
         }, function () {
-            toastr.error("упсс, настана грешка..работиме на средување на истата!!");
+            notifications.showError('Настана грешка. Огласот не е пријавен.');
             console.log("error reporting the post!!");
         });
         $scope.toggleReportModal();
@@ -67,9 +67,9 @@ WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $st
 
     $scope.sendMessage = function () {
         UserService.sendMessage($scope.message).then(function () {
-            toastr.success("Пораката е успешно испратена!!");
+            notifications.showSuccess('Пораката до <strong>' + $scope.message.userToId + '</strong> е успешно испратена.');
         }, function () {
-            toastr.error("упсс, настана грешка..работиме на средување на истата!!");
+            notifications.showError('Настана грешка. Пораката не е испратена.');
             console.log("error sending the message!!")
         });
         $scope.toggleMessageModal();
@@ -93,6 +93,7 @@ WPAngularStarter.controller('ViewListingController', function ($sce, $scope, $st
         setTimeout(function () {
             ListingService.delete($scope.listing.id).then(function () {
                 $state.go('view-listings');
+                notifications.showWarning('Огласот е избришан.')
             })
         }, 300);
     };

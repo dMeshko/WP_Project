@@ -31,7 +31,11 @@
     "angular-ui-event": "latest",
     "angular-bootstrap": "latest",
     "ngmap": "latest",
+<<<<<<< HEAD
     "ng-notifications-bar": "latest"
+=======
+    "ng-notifications-bar":"latest"
+>>>>>>> origin/master
   },
   "resolutions": {
     "angular": ">=1.3.0"

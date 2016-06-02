@@ -16,7 +16,11 @@ WPAngularStarter.controller('userProfileController', function ($scope, $state, n
     $scope.editProfile = function () {
         UserService.editUser($scope.user).then(function () {
             $state.go('home');
+<<<<<<< HEAD
             notifications.showSuccess({message: 'Профилот е изменет!'});
+=======
+            notifications.showWarning('Промените се зачувани.');
+>>>>>>> origin/master
         });
     }
 });

@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/overriden-nav.css">
     <link rel="stylesheet" href="css/animate.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="bower_components/ng-notifications-bar/css/ngNotificationsBar.min.css">
+=======
+>>>>>>> origin/master
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,7 +32,12 @@
 </head>
 
 <body ng-app="wp-angular-starter" ng-cloak class="ng-cloak" ui-router-styles>
+<<<<<<< HEAD
 <nav style="z-index: 2;" class="navbar navbar-default navbar-fixed-top">
+=======
+<notifications-bar class="notifications" closeIcon="fa fa-times-circle" style="z-index:10;"></notifications-bar>
+<nav class="navbar navbar-default navbar-fixed-top" style="z-index:9;">
+>>>>>>> origin/master
     <div class="container-fluid">
         <div class="navbar-header" style="margin-top:-1%;">
             <button style="border:none;" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -53,9 +61,15 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+<<<<<<< HEAD
                         <li><a ui-sref="profile"><i class="fa fa-pencil-square-o"></i> Профил</a></li>
                         <li><a ui-sref="inbox"><i class="fa fa-inbox"></i> Примени пораки</a></li>
                         <li><a ui-sref="outbox"><i class="fa fa-paper-plane"></i> Испратени пораки</a></li>
+=======
+                        <li><a ui-sref="inbox"><i class="fa fa-inbox"></i> Примени пораки</a></li>
+                        <li><a ui-sref="outbox"><i class="fa fa-paper-plane"></i> Испратени пораки</a></li>
+                        <li><a ui-sref="profile"><i class="fa fa-user"></i> Профил</a></li>
+>>>>>>> origin/master
                         <li role="separator" class="divider"></li>
                         <li><a href="javascript:void(0);" data-ng-click="logout();"><span class="fa fa-sign-out"></span>
                             Одјави се</a></li>
@@ -82,6 +96,7 @@
 </script>
 
 <script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
-<script src=""></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDMyT0hlU4u9mJGaokKUHEDqnkHdt369eA&v=3.exp">
+</script>
 </body>
 </html>
